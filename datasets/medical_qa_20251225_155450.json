@@ -1,0 +1,962 @@
+[
+  {
+    "question": "Valeurs normales pour Hemoglobin",
+    "answer": "Hemoglobin: Measurement of hemoglobin in blood, used for diagnosing and monitoring various conditions. Valeurs normales: 12.0-16.0 g/dL."
+  },
+  {
+    "question": "Valeurs normales pour Hemoglobin",
+    "answer": "Le test Hemoglobin mesure measurement of hemoglobin in blood, used for diagnosing and monitoring various conditions.. La plage normale est de 12.0 à 16.0 g/dL."
+  },
+  {
+    "question": "Interprétation du test Hemoglobin",
+    "answer": "Hemoglobin: Measurement of hemoglobin in blood, used for diagnosing and monitoring various conditions. Valeurs normales: 12.0-16.0 g/dL."
+  },
+  {
+    "question": "Interprétation du test Hemoglobin",
+    "answer": "Le test Hemoglobin mesure measurement of hemoglobin in blood, used for diagnosing and monitoring various conditions.. La plage normale est de 12.0 à 16.0 g/dL."
+  },
+  {
+    "question": "Hemoglobin trop élevé, que faire?",
+    "answer": "Hemoglobin: Measurement of hemoglobin in blood, used for diagnosing and monitoring various conditions. Valeurs normales: 12.0-16.0 g/dL."
+  },
+  {
+    "question": "Hemoglobin trop élevé, que faire?",
+    "answer": "Le test Hemoglobin mesure measurement of hemoglobin in blood, used for diagnosing and monitoring various conditions.. La plage normale est de 12.0 à 16.0 g/dL."
+  },
+  {
+    "question": "Valeurs normales pour White Blood Cell Count",
+    "answer": "White Blood Cell Count: Clinical laboratory test measuring white blood cell count levels to assess health status. Valeurs normales: 4.0-11.0 10^9/L."
+  },
+  {
+    "question": "Valeurs normales pour White Blood Cell Count",
+    "answer": "Le test White Blood Cell Count mesure clinical laboratory test measuring white blood cell count levels to assess health status.. La plage normale est de 4.0 à 11.0 10^9/L."
+  },
+  {
+    "question": "Interprétation du test White Blood Cell Count",
+    "answer": "White Blood Cell Count: Clinical laboratory test measuring white blood cell count levels to assess health status. Valeurs normales: 4.0-11.0 10^9/L."
+  },
+  {
+    "question": "Interprétation du test White Blood Cell Count",
+    "answer": "Le test White Blood Cell Count mesure clinical laboratory test measuring white blood cell count levels to assess health status.. La plage normale est de 4.0 à 11.0 10^9/L."
+  },
+  {
+    "question": "White Blood Cell Count trop élevé, que faire?",
+    "answer": "White Blood Cell Count: Clinical laboratory test measuring white blood cell count levels to assess health status. Valeurs normales: 4.0-11.0 10^9/L."
+  },
+  {
+    "question": "White Blood Cell Count trop élevé, que faire?",
+    "answer": "Le test White Blood Cell Count mesure clinical laboratory test measuring white blood cell count levels to assess health status.. La plage normale est de 4.0 à 11.0 10^9/L."
+  },
+  {
+    "question": "Valeurs normales pour Platelet Count",
+    "answer": "Platelet Count: Quantitative analysis of platelet count providing insights into physiological processes. Valeurs normales: 150.0-450.0 10^9/L."
+  },
+  {
+    "question": "Valeurs normales pour Platelet Count",
+    "answer": "Le test Platelet Count mesure quantitative analysis of platelet count providing insights into physiological processes.. La plage normale est de 150.0 à 450.0 10^9/L."
+  },
+  {
+    "question": "Interprétation du test Platelet Count",
+    "answer": "Platelet Count: Quantitative analysis of platelet count providing insights into physiological processes. Valeurs normales: 150.0-450.0 10^9/L."
+  },
+  {
+    "question": "Interprétation du test Platelet Count",
+    "answer": "Le test Platelet Count mesure quantitative analysis of platelet count providing insights into physiological processes.. La plage normale est de 150.0 à 450.0 10^9/L."
+  },
+  {
+    "question": "Platelet Count trop élevé, que faire?",
+    "answer": "Platelet Count: Quantitative analysis of platelet count providing insights into physiological processes. Valeurs normales: 150.0-450.0 10^9/L."
+  },
+  {
+    "question": "Platelet Count trop élevé, que faire?",
+    "answer": "Le test Platelet Count mesure quantitative analysis of platelet count providing insights into physiological processes.. La plage normale est de 150.0 à 450.0 10^9/L."
+  },
+  {
+    "question": "Valeurs normales pour Cholesterol Total",
+    "answer": "Cholesterol Total: Measurement of cholesterol total in blood, used for diagnosing and monitoring various conditions. Valeurs normales: 3.6-5.2 mmol/L."
+  },
+  {
+    "question": "Valeurs normales pour Cholesterol Total",
+    "answer": "Le test Cholesterol Total mesure measurement of cholesterol total in blood, used for diagnosing and monitoring various conditions.. La plage normale est de 3.6 à 5.2 mmol/L."
+  },
+  {
+    "question": "Interprétation du test Cholesterol Total",
+    "answer": "Cholesterol Total: Measurement of cholesterol total in blood, used for diagnosing and monitoring various conditions. Valeurs normales: 3.6-5.2 mmol/L."
+  },
+  {
+    "question": "Interprétation du test Cholesterol Total",
+    "answer": "Le test Cholesterol Total mesure measurement of cholesterol total in blood, used for diagnosing and monitoring various conditions.. La plage normale est de 3.6 à 5.2 mmol/L."
+  },
+  {
+    "question": "Cholesterol Total trop élevé, que faire?",
+    "answer": "Cholesterol Total: Measurement of cholesterol total in blood, used for diagnosing and monitoring various conditions. Valeurs normales: 3.6-5.2 mmol/L."
+  },
+  {
+    "question": "Cholesterol Total trop élevé, que faire?",
+    "answer": "Le test Cholesterol Total mesure measurement of cholesterol total in blood, used for diagnosing and monitoring various conditions.. La plage normale est de 3.6 à 5.2 mmol/L."
+  },
+  {
+    "question": "Valeurs normales pour Low-Density Lipoprotein",
+    "answer": "Low-Density Lipoprotein: Quantitative analysis of low-density lipoprotein providing insights into physiological processes. Valeurs normales: 1.8-3.0 mmol/L."
+  },
+  {
+    "question": "Valeurs normales pour Low-Density Lipoprotein",
+    "answer": "Le test Low-Density Lipoprotein mesure quantitative analysis of low-density lipoprotein providing insights into physiological processes.. La plage normale est de 1.8 à 3.0 mmol/L."
+  },
+  {
+    "question": "Interprétation du test Low-Density Lipoprotein",
+    "answer": "Low-Density Lipoprotein: Quantitative analysis of low-density lipoprotein providing insights into physiological processes. Valeurs normales: 1.8-3.0 mmol/L."
+  },
+  {
+    "question": "Interprétation du test Low-Density Lipoprotein",
+    "answer": "Le test Low-Density Lipoprotein mesure quantitative analysis of low-density lipoprotein providing insights into physiological processes.. La plage normale est de 1.8 à 3.0 mmol/L."
+  },
+  {
+    "question": "Low-Density Lipoprotein trop élevé, que faire?",
+    "answer": "Low-Density Lipoprotein: Quantitative analysis of low-density lipoprotein providing insights into physiological processes. Valeurs normales: 1.8-3.0 mmol/L."
+  },
+  {
+    "question": "Low-Density Lipoprotein trop élevé, que faire?",
+    "answer": "Le test Low-Density Lipoprotein mesure quantitative analysis of low-density lipoprotein providing insights into physiological processes.. La plage normale est de 1.8 à 3.0 mmol/L."
+  },
+  {
+    "question": "Valeurs normales pour High-Density Lipoprotein",
+    "answer": "High-Density Lipoprotein: Clinical laboratory test measuring high-density lipoprotein levels to assess health status. Valeurs normales: 1.0-2.0 mmol/L."
+  },
+  {
+    "question": "Valeurs normales pour High-Density Lipoprotein",
+    "answer": "Le test High-Density Lipoprotein mesure clinical laboratory test measuring high-density lipoprotein levels to assess health status.. La plage normale est de 1.0 à 2.0 mmol/L."
+  },
+  {
+    "question": "Interprétation du test High-Density Lipoprotein",
+    "answer": "High-Density Lipoprotein: Clinical laboratory test measuring high-density lipoprotein levels to assess health status. Valeurs normales: 1.0-2.0 mmol/L."
+  },
+  {
+    "question": "Interprétation du test High-Density Lipoprotein",
+    "answer": "Le test High-Density Lipoprotein mesure clinical laboratory test measuring high-density lipoprotein levels to assess health status.. La plage normale est de 1.0 à 2.0 mmol/L."
+  },
+  {
+    "question": "High-Density Lipoprotein trop élevé, que faire?",
+    "answer": "High-Density Lipoprotein: Clinical laboratory test measuring high-density lipoprotein levels to assess health status. Valeurs normales: 1.0-2.0 mmol/L."
+  },
+  {
+    "question": "High-Density Lipoprotein trop élevé, que faire?",
+    "answer": "Le test High-Density Lipoprotein mesure clinical laboratory test measuring high-density lipoprotein levels to assess health status.. La plage normale est de 1.0 à 2.0 mmol/L."
+  },
+  {
+    "question": "Valeurs normales pour Triglycerides",
+    "answer": "Triglycerides: Measurement of triglycerides in blood, used for diagnosing and monitoring various conditions. Valeurs normales: 0.5-1.7 mmol/L."
+  },
+  {
+    "question": "Valeurs normales pour Triglycerides",
+    "answer": "Le test Triglycerides mesure measurement of triglycerides in blood, used for diagnosing and monitoring various conditions.. La plage normale est de 0.5 à 1.7 mmol/L."
+  },
+  {
+    "question": "Interprétation du test Triglycerides",
+    "answer": "Triglycerides: Measurement of triglycerides in blood, used for diagnosing and monitoring various conditions. Valeurs normales: 0.5-1.7 mmol/L."
+  },
+  {
+    "question": "Interprétation du test Triglycerides",
+    "answer": "Le test Triglycerides mesure measurement of triglycerides in blood, used for diagnosing and monitoring various conditions.. La plage normale est de 0.5 à 1.7 mmol/L."
+  },
+  {
+    "question": "Triglycerides trop élevé, que faire?",
+    "answer": "Triglycerides: Measurement of triglycerides in blood, used for diagnosing and monitoring various conditions. Valeurs normales: 0.5-1.7 mmol/L."
+  },
+  {
+    "question": "Triglycerides trop élevé, que faire?",
+    "answer": "Le test Triglycerides mesure measurement of triglycerides in blood, used for diagnosing and monitoring various conditions.. La plage normale est de 0.5 à 1.7 mmol/L."
+  },
+  {
+    "question": "Valeurs normales pour Fasting Blood Glucose",
+    "answer": "Fasting Blood Glucose: Standard blood test that helps detect abnormalities in biochemistry parameters. Valeurs normales: 3.9-5.6 mmol/L."
+  },
+  {
+    "question": "Valeurs normales pour Fasting Blood Glucose",
+    "answer": "Le test Fasting Blood Glucose mesure standard blood test that helps detect abnormalities in biochemistry parameters.. La plage normale est de 3.9 à 5.6 mmol/L."
+  },
+  {
+    "question": "Interprétation du test Fasting Blood Glucose",
+    "answer": "Fasting Blood Glucose: Standard blood test that helps detect abnormalities in biochemistry parameters. Valeurs normales: 3.9-5.6 mmol/L."
+  },
+  {
+    "question": "Interprétation du test Fasting Blood Glucose",
+    "answer": "Le test Fasting Blood Glucose mesure standard blood test that helps detect abnormalities in biochemistry parameters.. La plage normale est de 3.9 à 5.6 mmol/L."
+  },
+  {
+    "question": "Fasting Blood Glucose trop élevé, que faire?",
+    "answer": "Fasting Blood Glucose: Standard blood test that helps detect abnormalities in biochemistry parameters. Valeurs normales: 3.9-5.6 mmol/L."
+  },
+  {
+    "question": "Fasting Blood Glucose trop élevé, que faire?",
+    "answer": "Le test Fasting Blood Glucose mesure standard blood test that helps detect abnormalities in biochemistry parameters.. La plage normale est de 3.9 à 5.6 mmol/L."
+  },
+  {
+    "question": "Valeurs normales pour Hemoglobin A1c",
+    "answer": "Hemoglobin A1c: Important diagnostic marker for evaluating endocrinology function and disorders. Valeurs normales: 4.0-5.6 %."
+  },
+  {
+    "question": "Valeurs normales pour Hemoglobin A1c",
+    "answer": "Le test Hemoglobin A1c mesure important diagnostic marker for evaluating endocrinology function and disorders.. La plage normale est de 4.0 à 5.6 %."
+  },
+  {
+    "question": "Interprétation du test Hemoglobin A1c",
+    "answer": "Hemoglobin A1c: Important diagnostic marker for evaluating endocrinology function and disorders. Valeurs normales: 4.0-5.6 %."
+  },
+  {
+    "question": "Interprétation du test Hemoglobin A1c",
+    "answer": "Le test Hemoglobin A1c mesure important diagnostic marker for evaluating endocrinology function and disorders.. La plage normale est de 4.0 à 5.6 %."
+  },
+  {
+    "question": "Hemoglobin A1c trop élevé, que faire?",
+    "answer": "Hemoglobin A1c: Important diagnostic marker for evaluating endocrinology function and disorders. Valeurs normales: 4.0-5.6 %."
+  },
+  {
+    "question": "Hemoglobin A1c trop élevé, que faire?",
+    "answer": "Le test Hemoglobin A1c mesure important diagnostic marker for evaluating endocrinology function and disorders.. La plage normale est de 4.0 à 5.6 %."
+  },
+  {
+    "question": "Valeurs normales pour Thyroid Stimulating Hormone",
+    "answer": "Thyroid Stimulating Hormone: Important diagnostic marker for evaluating endocrinology function and disorders. Valeurs normales: 0.4-4.0 mIU/L."
+  },
+  {
+    "question": "Valeurs normales pour Thyroid Stimulating Hormone",
+    "answer": "Le test Thyroid Stimulating Hormone mesure important diagnostic marker for evaluating endocrinology function and disorders.. La plage normale est de 0.4 à 4.0 mIU/L."
+  },
+  {
+    "question": "Interprétation du test Thyroid Stimulating Hormone",
+    "answer": "Thyroid Stimulating Hormone: Important diagnostic marker for evaluating endocrinology function and disorders. Valeurs normales: 0.4-4.0 mIU/L."
+  },
+  {
+    "question": "Interprétation du test Thyroid Stimulating Hormone",
+    "answer": "Le test Thyroid Stimulating Hormone mesure important diagnostic marker for evaluating endocrinology function and disorders.. La plage normale est de 0.4 à 4.0 mIU/L."
+  },
+  {
+    "question": "Thyroid Stimulating Hormone trop élevé, que faire?",
+    "answer": "Thyroid Stimulating Hormone: Important diagnostic marker for evaluating endocrinology function and disorders. Valeurs normales: 0.4-4.0 mIU/L."
+  },
+  {
+    "question": "Thyroid Stimulating Hormone trop élevé, que faire?",
+    "answer": "Le test Thyroid Stimulating Hormone mesure important diagnostic marker for evaluating endocrinology function and disorders.. La plage normale est de 0.4 à 4.0 mIU/L."
+  },
+  {
+    "question": "Valeurs normales pour Free T4",
+    "answer": "Free T4: Quantitative analysis of free t4 providing insights into physiological processes. Valeurs normales: 10.0-20.0 pmol/L."
+  },
+  {
+    "question": "Valeurs normales pour Free T4",
+    "answer": "Le test Free T4 mesure quantitative analysis of free t4 providing insights into physiological processes.. La plage normale est de 10.0 à 20.0 pmol/L."
+  },
+  {
+    "question": "Interprétation du test Free T4",
+    "answer": "Free T4: Quantitative analysis of free t4 providing insights into physiological processes. Valeurs normales: 10.0-20.0 pmol/L."
+  },
+  {
+    "question": "Interprétation du test Free T4",
+    "answer": "Le test Free T4 mesure quantitative analysis of free t4 providing insights into physiological processes.. La plage normale est de 10.0 à 20.0 pmol/L."
+  },
+  {
+    "question": "Free T4 trop élevé, que faire?",
+    "answer": "Free T4: Quantitative analysis of free t4 providing insights into physiological processes. Valeurs normales: 10.0-20.0 pmol/L."
+  },
+  {
+    "question": "Free T4 trop élevé, que faire?",
+    "answer": "Le test Free T4 mesure quantitative analysis of free t4 providing insights into physiological processes.. La plage normale est de 10.0 à 20.0 pmol/L."
+  },
+  {
+    "question": "Valeurs normales pour C-Reactive Protein",
+    "answer": "C-Reactive Protein: Quantitative analysis of c-reactive protein providing insights into physiological processes. Valeurs normales: 0.0-5.0 mg/L."
+  },
+  {
+    "question": "Valeurs normales pour C-Reactive Protein",
+    "answer": "Le test C-Reactive Protein mesure quantitative analysis of c-reactive protein providing insights into physiological processes.. La plage normale est de 0.0 à 5.0 mg/L."
+  },
+  {
+    "question": "Interprétation du test C-Reactive Protein",
+    "answer": "C-Reactive Protein: Quantitative analysis of c-reactive protein providing insights into physiological processes. Valeurs normales: 0.0-5.0 mg/L."
+  },
+  {
+    "question": "Interprétation du test C-Reactive Protein",
+    "answer": "Le test C-Reactive Protein mesure quantitative analysis of c-reactive protein providing insights into physiological processes.. La plage normale est de 0.0 à 5.0 mg/L."
+  },
+  {
+    "question": "C-Reactive Protein trop élevé, que faire?",
+    "answer": "C-Reactive Protein: Quantitative analysis of c-reactive protein providing insights into physiological processes. Valeurs normales: 0.0-5.0 mg/L."
+  },
+  {
+    "question": "C-Reactive Protein trop élevé, que faire?",
+    "answer": "Le test C-Reactive Protein mesure quantitative analysis of c-reactive protein providing insights into physiological processes.. La plage normale est de 0.0 à 5.0 mg/L."
+  },
+  {
+    "question": "Valeurs normales pour Erythrocyte Sedimentation Rate",
+    "answer": "Erythrocyte Sedimentation Rate: Quantitative analysis of erythrocyte sedimentation rate providing insights into physiological processes. Valeurs normales: 0.0-20.0 mm/hr."
+  },
+  {
+    "question": "Valeurs normales pour Erythrocyte Sedimentation Rate",
+    "answer": "Le test Erythrocyte Sedimentation Rate mesure quantitative analysis of erythrocyte sedimentation rate providing insights into physiological processes.. La plage normale est de 0.0 à 20.0 mm/hr."
+  },
+  {
+    "question": "Interprétation du test Erythrocyte Sedimentation Rate",
+    "answer": "Erythrocyte Sedimentation Rate: Quantitative analysis of erythrocyte sedimentation rate providing insights into physiological processes. Valeurs normales: 0.0-20.0 mm/hr."
+  },
+  {
+    "question": "Interprétation du test Erythrocyte Sedimentation Rate",
+    "answer": "Le test Erythrocyte Sedimentation Rate mesure quantitative analysis of erythrocyte sedimentation rate providing insights into physiological processes.. La plage normale est de 0.0 à 20.0 mm/hr."
+  },
+  {
+    "question": "Erythrocyte Sedimentation Rate trop élevé, que faire?",
+    "answer": "Erythrocyte Sedimentation Rate: Quantitative analysis of erythrocyte sedimentation rate providing insights into physiological processes. Valeurs normales: 0.0-20.0 mm/hr."
+  },
+  {
+    "question": "Erythrocyte Sedimentation Rate trop élevé, que faire?",
+    "answer": "Le test Erythrocyte Sedimentation Rate mesure quantitative analysis of erythrocyte sedimentation rate providing insights into physiological processes.. La plage normale est de 0.0 à 20.0 mm/hr."
+  },
+  {
+    "question": "Valeurs normales pour Creatinine",
+    "answer": "Creatinine: Clinical laboratory test measuring creatinine levels to assess health status. Valeurs normales: 62.0-106.0 μmol/L."
+  },
+  {
+    "question": "Valeurs normales pour Creatinine",
+    "answer": "Le test Creatinine mesure clinical laboratory test measuring creatinine levels to assess health status.. La plage normale est de 62.0 à 106.0 μmol/L."
+  },
+  {
+    "question": "Interprétation du test Creatinine",
+    "answer": "Creatinine: Clinical laboratory test measuring creatinine levels to assess health status. Valeurs normales: 62.0-106.0 μmol/L."
+  },
+  {
+    "question": "Interprétation du test Creatinine",
+    "answer": "Le test Creatinine mesure clinical laboratory test measuring creatinine levels to assess health status.. La plage normale est de 62.0 à 106.0 μmol/L."
+  },
+  {
+    "question": "Creatinine trop élevé, que faire?",
+    "answer": "Creatinine: Clinical laboratory test measuring creatinine levels to assess health status. Valeurs normales: 62.0-106.0 μmol/L."
+  },
+  {
+    "question": "Creatinine trop élevé, que faire?",
+    "answer": "Le test Creatinine mesure clinical laboratory test measuring creatinine levels to assess health status.. La plage normale est de 62.0 à 106.0 μmol/L."
+  },
+  {
+    "question": "Valeurs normales pour Blood Urea Nitrogen",
+    "answer": "Blood Urea Nitrogen: Measurement of blood urea nitrogen in blood, used for diagnosing and monitoring various conditions. Valeurs normales: 2.5-7.1 mmol/L."
+  },
+  {
+    "question": "Valeurs normales pour Blood Urea Nitrogen",
+    "answer": "Le test Blood Urea Nitrogen mesure measurement of blood urea nitrogen in blood, used for diagnosing and monitoring various conditions.. La plage normale est de 2.5 à 7.1 mmol/L."
+  },
+  {
+    "question": "Interprétation du test Blood Urea Nitrogen",
+    "answer": "Blood Urea Nitrogen: Measurement of blood urea nitrogen in blood, used for diagnosing and monitoring various conditions. Valeurs normales: 2.5-7.1 mmol/L."
+  },
+  {
+    "question": "Interprétation du test Blood Urea Nitrogen",
+    "answer": "Le test Blood Urea Nitrogen mesure measurement of blood urea nitrogen in blood, used for diagnosing and monitoring various conditions.. La plage normale est de 2.5 à 7.1 mmol/L."
+  },
+  {
+    "question": "Blood Urea Nitrogen trop élevé, que faire?",
+    "answer": "Blood Urea Nitrogen: Measurement of blood urea nitrogen in blood, used for diagnosing and monitoring various conditions. Valeurs normales: 2.5-7.1 mmol/L."
+  },
+  {
+    "question": "Blood Urea Nitrogen trop élevé, que faire?",
+    "answer": "Le test Blood Urea Nitrogen mesure measurement of blood urea nitrogen in blood, used for diagnosing and monitoring various conditions.. La plage normale est de 2.5 à 7.1 mmol/L."
+  },
+  {
+    "question": "Valeurs normales pour Sodium",
+    "answer": "Sodium: Clinical laboratory test measuring sodium levels to assess health status. Valeurs normales: 135.0-145.0 mmol/L."
+  },
+  {
+    "question": "Valeurs normales pour Sodium",
+    "answer": "Le test Sodium mesure clinical laboratory test measuring sodium levels to assess health status.. La plage normale est de 135.0 à 145.0 mmol/L."
+  },
+  {
+    "question": "Interprétation du test Sodium",
+    "answer": "Sodium: Clinical laboratory test measuring sodium levels to assess health status. Valeurs normales: 135.0-145.0 mmol/L."
+  },
+  {
+    "question": "Interprétation du test Sodium",
+    "answer": "Le test Sodium mesure clinical laboratory test measuring sodium levels to assess health status.. La plage normale est de 135.0 à 145.0 mmol/L."
+  },
+  {
+    "question": "Sodium trop élevé, que faire?",
+    "answer": "Sodium: Clinical laboratory test measuring sodium levels to assess health status. Valeurs normales: 135.0-145.0 mmol/L."
+  },
+  {
+    "question": "Sodium trop élevé, que faire?",
+    "answer": "Le test Sodium mesure clinical laboratory test measuring sodium levels to assess health status.. La plage normale est de 135.0 à 145.0 mmol/L."
+  },
+  {
+    "question": "Valeurs normales pour Potassium",
+    "answer": "Potassium: Important diagnostic marker for evaluating biochemistry function and disorders. Valeurs normales: 3.5-5.0 mmol/L."
+  },
+  {
+    "question": "Valeurs normales pour Potassium",
+    "answer": "Le test Potassium mesure important diagnostic marker for evaluating biochemistry function and disorders.. La plage normale est de 3.5 à 5.0 mmol/L."
+  },
+  {
+    "question": "Interprétation du test Potassium",
+    "answer": "Potassium: Important diagnostic marker for evaluating biochemistry function and disorders. Valeurs normales: 3.5-5.0 mmol/L."
+  },
+  {
+    "question": "Interprétation du test Potassium",
+    "answer": "Le test Potassium mesure important diagnostic marker for evaluating biochemistry function and disorders.. La plage normale est de 3.5 à 5.0 mmol/L."
+  },
+  {
+    "question": "Potassium trop élevé, que faire?",
+    "answer": "Potassium: Important diagnostic marker for evaluating biochemistry function and disorders. Valeurs normales: 3.5-5.0 mmol/L."
+  },
+  {
+    "question": "Potassium trop élevé, que faire?",
+    "answer": "Le test Potassium mesure important diagnostic marker for evaluating biochemistry function and disorders.. La plage normale est de 3.5 à 5.0 mmol/L."
+  },
+  {
+    "question": "Valeurs normales pour Alanine Aminotransferase",
+    "answer": "Alanine Aminotransferase: Quantitative analysis of alanine aminotransferase providing insights into physiological processes. Valeurs normales: 7.0-56.0 U/L."
+  },
+  {
+    "question": "Valeurs normales pour Alanine Aminotransferase",
+    "answer": "Le test Alanine Aminotransferase mesure quantitative analysis of alanine aminotransferase providing insights into physiological processes.. La plage normale est de 7.0 à 56.0 U/L."
+  },
+  {
+    "question": "Interprétation du test Alanine Aminotransferase",
+    "answer": "Alanine Aminotransferase: Quantitative analysis of alanine aminotransferase providing insights into physiological processes. Valeurs normales: 7.0-56.0 U/L."
+  },
+  {
+    "question": "Interprétation du test Alanine Aminotransferase",
+    "answer": "Le test Alanine Aminotransferase mesure quantitative analysis of alanine aminotransferase providing insights into physiological processes.. La plage normale est de 7.0 à 56.0 U/L."
+  },
+  {
+    "question": "Alanine Aminotransferase trop élevé, que faire?",
+    "answer": "Alanine Aminotransferase: Quantitative analysis of alanine aminotransferase providing insights into physiological processes. Valeurs normales: 7.0-56.0 U/L."
+  },
+  {
+    "question": "Alanine Aminotransferase trop élevé, que faire?",
+    "answer": "Le test Alanine Aminotransferase mesure quantitative analysis of alanine aminotransferase providing insights into physiological processes.. La plage normale est de 7.0 à 56.0 U/L."
+  },
+  {
+    "question": "Valeurs normales pour Aspartate Aminotransferase",
+    "answer": "Aspartate Aminotransferase: Clinical laboratory test measuring aspartate aminotransferase levels to assess health status. Valeurs normales: 10.0-40.0 U/L."
+  },
+  {
+    "question": "Valeurs normales pour Aspartate Aminotransferase",
+    "answer": "Le test Aspartate Aminotransferase mesure clinical laboratory test measuring aspartate aminotransferase levels to assess health status.. La plage normale est de 10.0 à 40.0 U/L."
+  },
+  {
+    "question": "Interprétation du test Aspartate Aminotransferase",
+    "answer": "Aspartate Aminotransferase: Clinical laboratory test measuring aspartate aminotransferase levels to assess health status. Valeurs normales: 10.0-40.0 U/L."
+  },
+  {
+    "question": "Interprétation du test Aspartate Aminotransferase",
+    "answer": "Le test Aspartate Aminotransferase mesure clinical laboratory test measuring aspartate aminotransferase levels to assess health status.. La plage normale est de 10.0 à 40.0 U/L."
+  },
+  {
+    "question": "Aspartate Aminotransferase trop élevé, que faire?",
+    "answer": "Aspartate Aminotransferase: Clinical laboratory test measuring aspartate aminotransferase levels to assess health status. Valeurs normales: 10.0-40.0 U/L."
+  },
+  {
+    "question": "Aspartate Aminotransferase trop élevé, que faire?",
+    "answer": "Le test Aspartate Aminotransferase mesure clinical laboratory test measuring aspartate aminotransferase levels to assess health status.. La plage normale est de 10.0 à 40.0 U/L."
+  },
+  {
+    "question": "Valeurs normales pour Alkaline Phosphatase",
+    "answer": "Alkaline Phosphatase: Quantitative analysis of alkaline phosphatase providing insights into physiological processes. Valeurs normales: 44.0-147.0 U/L."
+  },
+  {
+    "question": "Valeurs normales pour Alkaline Phosphatase",
+    "answer": "Le test Alkaline Phosphatase mesure quantitative analysis of alkaline phosphatase providing insights into physiological processes.. La plage normale est de 44.0 à 147.0 U/L."
+  },
+  {
+    "question": "Interprétation du test Alkaline Phosphatase",
+    "answer": "Alkaline Phosphatase: Quantitative analysis of alkaline phosphatase providing insights into physiological processes. Valeurs normales: 44.0-147.0 U/L."
+  },
+  {
+    "question": "Interprétation du test Alkaline Phosphatase",
+    "answer": "Le test Alkaline Phosphatase mesure quantitative analysis of alkaline phosphatase providing insights into physiological processes.. La plage normale est de 44.0 à 147.0 U/L."
+  },
+  {
+    "question": "Alkaline Phosphatase trop élevé, que faire?",
+    "answer": "Alkaline Phosphatase: Quantitative analysis of alkaline phosphatase providing insights into physiological processes. Valeurs normales: 44.0-147.0 U/L."
+  },
+  {
+    "question": "Alkaline Phosphatase trop élevé, que faire?",
+    "answer": "Le test Alkaline Phosphatase mesure quantitative analysis of alkaline phosphatase providing insights into physiological processes.. La plage normale est de 44.0 à 147.0 U/L."
+  },
+  {
+    "question": "Symptômes du Hypertension",
+    "answer": "Hypertension: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Symptômes du Hypertension",
+    "answer": "En médecine, Hypertension se réfère à: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Traitement de Hypertension",
+    "answer": "Hypertension: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Traitement de Hypertension",
+    "answer": "En médecine, Hypertension se réfère à: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Causes de Hypertension",
+    "answer": "Hypertension: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Causes de Hypertension",
+    "answer": "En médecine, Hypertension se réfère à: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Symptômes du Type 2 Diabetes Mellitus",
+    "answer": "Type 2 Diabetes Mellitus: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Symptômes du Type 2 Diabetes Mellitus",
+    "answer": "En médecine, Type 2 Diabetes Mellitus se réfère à: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Traitement de Type 2 Diabetes Mellitus",
+    "answer": "Type 2 Diabetes Mellitus: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Traitement de Type 2 Diabetes Mellitus",
+    "answer": "En médecine, Type 2 Diabetes Mellitus se réfère à: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Causes de Type 2 Diabetes Mellitus",
+    "answer": "Type 2 Diabetes Mellitus: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Causes de Type 2 Diabetes Mellitus",
+    "answer": "En médecine, Type 2 Diabetes Mellitus se réfère à: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Symptômes du Coronary Artery Disease",
+    "answer": "Coronary Artery Disease: Pathological condition requiring ongoing monitoring and treatment."
+  },
+  {
+    "question": "Symptômes du Coronary Artery Disease",
+    "answer": "En médecine, Coronary Artery Disease se réfère à: Pathological condition requiring ongoing monitoring and treatment."
+  },
+  {
+    "question": "Traitement de Coronary Artery Disease",
+    "answer": "Coronary Artery Disease: Pathological condition requiring ongoing monitoring and treatment."
+  },
+  {
+    "question": "Traitement de Coronary Artery Disease",
+    "answer": "En médecine, Coronary Artery Disease se réfère à: Pathological condition requiring ongoing monitoring and treatment."
+  },
+  {
+    "question": "Causes de Coronary Artery Disease",
+    "answer": "Coronary Artery Disease: Pathological condition requiring ongoing monitoring and treatment."
+  },
+  {
+    "question": "Causes de Coronary Artery Disease",
+    "answer": "En médecine, Coronary Artery Disease se réfère à: Pathological condition requiring ongoing monitoring and treatment."
+  },
+  {
+    "question": "Symptômes du Chronic Obstructive Pulmonary Disease",
+    "answer": "Chronic Obstructive Pulmonary Disease: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Symptômes du Chronic Obstructive Pulmonary Disease",
+    "answer": "En médecine, Chronic Obstructive Pulmonary Disease se réfère à: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Traitement de Chronic Obstructive Pulmonary Disease",
+    "answer": "Chronic Obstructive Pulmonary Disease: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Traitement de Chronic Obstructive Pulmonary Disease",
+    "answer": "En médecine, Chronic Obstructive Pulmonary Disease se réfère à: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Causes de Chronic Obstructive Pulmonary Disease",
+    "answer": "Chronic Obstructive Pulmonary Disease: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Causes de Chronic Obstructive Pulmonary Disease",
+    "answer": "En médecine, Chronic Obstructive Pulmonary Disease se réfère à: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Symptômes du Asthma",
+    "answer": "Asthma: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Symptômes du Asthma",
+    "answer": "En médecine, Asthma se réfère à: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Traitement de Asthma",
+    "answer": "Asthma: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Traitement de Asthma",
+    "answer": "En médecine, Asthma se réfère à: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Causes de Asthma",
+    "answer": "Asthma: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Causes de Asthma",
+    "answer": "En médecine, Asthma se réfère à: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Symptômes du Rheumatoid Arthritis",
+    "answer": "Rheumatoid Arthritis: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Symptômes du Rheumatoid Arthritis",
+    "answer": "En médecine, Rheumatoid Arthritis se réfère à: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Traitement de Rheumatoid Arthritis",
+    "answer": "Rheumatoid Arthritis: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Traitement de Rheumatoid Arthritis",
+    "answer": "En médecine, Rheumatoid Arthritis se réfère à: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Causes de Rheumatoid Arthritis",
+    "answer": "Rheumatoid Arthritis: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Causes de Rheumatoid Arthritis",
+    "answer": "En médecine, Rheumatoid Arthritis se réfère à: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Symptômes du Osteoarthritis",
+    "answer": "Osteoarthritis: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Symptômes du Osteoarthritis",
+    "answer": "En médecine, Osteoarthritis se réfère à: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Traitement de Osteoarthritis",
+    "answer": "Osteoarthritis: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Traitement de Osteoarthritis",
+    "answer": "En médecine, Osteoarthritis se réfère à: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Causes de Osteoarthritis",
+    "answer": "Osteoarthritis: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Causes de Osteoarthritis",
+    "answer": "En médecine, Osteoarthritis se réfère à: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Symptômes du Major Depressive Disorder",
+    "answer": "Major Depressive Disorder: Pathological condition requiring ongoing monitoring and treatment."
+  },
+  {
+    "question": "Symptômes du Major Depressive Disorder",
+    "answer": "En médecine, Major Depressive Disorder se réfère à: Pathological condition requiring ongoing monitoring and treatment."
+  },
+  {
+    "question": "Traitement de Major Depressive Disorder",
+    "answer": "Major Depressive Disorder: Pathological condition requiring ongoing monitoring and treatment."
+  },
+  {
+    "question": "Traitement de Major Depressive Disorder",
+    "answer": "En médecine, Major Depressive Disorder se réfère à: Pathological condition requiring ongoing monitoring and treatment."
+  },
+  {
+    "question": "Causes de Major Depressive Disorder",
+    "answer": "Major Depressive Disorder: Pathological condition requiring ongoing monitoring and treatment."
+  },
+  {
+    "question": "Causes de Major Depressive Disorder",
+    "answer": "En médecine, Major Depressive Disorder se réfère à: Pathological condition requiring ongoing monitoring and treatment."
+  },
+  {
+    "question": "Symptômes du Generalized Anxiety Disorder",
+    "answer": "Generalized Anxiety Disorder: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Symptômes du Generalized Anxiety Disorder",
+    "answer": "En médecine, Generalized Anxiety Disorder se réfère à: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Traitement de Generalized Anxiety Disorder",
+    "answer": "Generalized Anxiety Disorder: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Traitement de Generalized Anxiety Disorder",
+    "answer": "En médecine, Generalized Anxiety Disorder se réfère à: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Causes de Generalized Anxiety Disorder",
+    "answer": "Generalized Anxiety Disorder: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Causes de Generalized Anxiety Disorder",
+    "answer": "En médecine, Generalized Anxiety Disorder se réfère à: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Symptômes du Hypothyroidism",
+    "answer": "Hypothyroidism: Common endocrinology disorder with significant impact on quality of life."
+  },
+  {
+    "question": "Symptômes du Hypothyroidism",
+    "answer": "En médecine, Hypothyroidism se réfère à: Common endocrinology disorder with significant impact on quality of life."
+  },
+  {
+    "question": "Traitement de Hypothyroidism",
+    "answer": "Hypothyroidism: Common endocrinology disorder with significant impact on quality of life."
+  },
+  {
+    "question": "Traitement de Hypothyroidism",
+    "answer": "En médecine, Hypothyroidism se réfère à: Common endocrinology disorder with significant impact on quality of life."
+  },
+  {
+    "question": "Causes de Hypothyroidism",
+    "answer": "Hypothyroidism: Common endocrinology disorder with significant impact on quality of life."
+  },
+  {
+    "question": "Causes de Hypothyroidism",
+    "answer": "En médecine, Hypothyroidism se réfère à: Common endocrinology disorder with significant impact on quality of life."
+  },
+  {
+    "question": "Symptômes du Hyperthyroidism",
+    "answer": "Hyperthyroidism: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Symptômes du Hyperthyroidism",
+    "answer": "En médecine, Hyperthyroidism se réfère à: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Traitement de Hyperthyroidism",
+    "answer": "Hyperthyroidism: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Traitement de Hyperthyroidism",
+    "answer": "En médecine, Hyperthyroidism se réfère à: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Causes de Hyperthyroidism",
+    "answer": "Hyperthyroidism: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Causes de Hyperthyroidism",
+    "answer": "En médecine, Hyperthyroidism se réfère à: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Symptômes du Heart Failure",
+    "answer": "Heart Failure: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Symptômes du Heart Failure",
+    "answer": "En médecine, Heart Failure se réfère à: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Traitement de Heart Failure",
+    "answer": "Heart Failure: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Traitement de Heart Failure",
+    "answer": "En médecine, Heart Failure se réfère à: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Causes de Heart Failure",
+    "answer": "Heart Failure: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Causes de Heart Failure",
+    "answer": "En médecine, Heart Failure se réfère à: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Symptômes du Atrial Fibrillation",
+    "answer": "Atrial Fibrillation: Medical condition characterized by atrial fibrillation requiring medical management."
+  },
+  {
+    "question": "Symptômes du Atrial Fibrillation",
+    "answer": "En médecine, Atrial Fibrillation se réfère à: Medical condition characterized by atrial fibrillation requiring medical management."
+  },
+  {
+    "question": "Traitement de Atrial Fibrillation",
+    "answer": "Atrial Fibrillation: Medical condition characterized by atrial fibrillation requiring medical management."
+  },
+  {
+    "question": "Traitement de Atrial Fibrillation",
+    "answer": "En médecine, Atrial Fibrillation se réfère à: Medical condition characterized by atrial fibrillation requiring medical management."
+  },
+  {
+    "question": "Causes de Atrial Fibrillation",
+    "answer": "Atrial Fibrillation: Medical condition characterized by atrial fibrillation requiring medical management."
+  },
+  {
+    "question": "Causes de Atrial Fibrillation",
+    "answer": "En médecine, Atrial Fibrillation se réfère à: Medical condition characterized by atrial fibrillation requiring medical management."
+  },
+  {
+    "question": "Symptômes du Stroke",
+    "answer": "Stroke: Common neurological disorder with significant impact on quality of life."
+  },
+  {
+    "question": "Symptômes du Stroke",
+    "answer": "En médecine, Stroke se réfère à: Common neurological disorder with significant impact on quality of life."
+  },
+  {
+    "question": "Traitement de Stroke",
+    "answer": "Stroke: Common neurological disorder with significant impact on quality of life."
+  },
+  {
+    "question": "Traitement de Stroke",
+    "answer": "En médecine, Stroke se réfère à: Common neurological disorder with significant impact on quality of life."
+  },
+  {
+    "question": "Causes de Stroke",
+    "answer": "Stroke: Common neurological disorder with significant impact on quality of life."
+  },
+  {
+    "question": "Causes de Stroke",
+    "answer": "En médecine, Stroke se réfère à: Common neurological disorder with significant impact on quality of life."
+  },
+  {
+    "question": "Symptômes du Migraine",
+    "answer": "Migraine: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Symptômes du Migraine",
+    "answer": "En médecine, Migraine se réfère à: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Traitement de Migraine",
+    "answer": "Migraine: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Traitement de Migraine",
+    "answer": "En médecine, Migraine se réfère à: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Causes de Migraine",
+    "answer": "Migraine: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Causes de Migraine",
+    "answer": "En médecine, Migraine se réfère à: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Symptômes du Irritable Bowel Syndrome",
+    "answer": "Irritable Bowel Syndrome: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Symptômes du Irritable Bowel Syndrome",
+    "answer": "En médecine, Irritable Bowel Syndrome se réfère à: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Traitement de Irritable Bowel Syndrome",
+    "answer": "Irritable Bowel Syndrome: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Traitement de Irritable Bowel Syndrome",
+    "answer": "En médecine, Irritable Bowel Syndrome se réfère à: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Causes de Irritable Bowel Syndrome",
+    "answer": "Irritable Bowel Syndrome: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Causes de Irritable Bowel Syndrome",
+    "answer": "En médecine, Irritable Bowel Syndrome se réfère à: Chronic health disorder affecting multiple systems, treated with lifestyle changes and medication."
+  },
+  {
+    "question": "Symptômes du Inflammatory Bowel Disease",
+    "answer": "Inflammatory Bowel Disease: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Symptômes du Inflammatory Bowel Disease",
+    "answer": "En médecine, Inflammatory Bowel Disease se réfère à: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Traitement de Inflammatory Bowel Disease",
+    "answer": "Inflammatory Bowel Disease: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Traitement de Inflammatory Bowel Disease",
+    "answer": "En médecine, Inflammatory Bowel Disease se réfère à: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Causes de Inflammatory Bowel Disease",
+    "answer": "Inflammatory Bowel Disease: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Causes de Inflammatory Bowel Disease",
+    "answer": "En médecine, Inflammatory Bowel Disease se réfère à: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Symptômes du Gastroesophageal Reflux Disease",
+    "answer": "Gastroesophageal Reflux Disease: Common gastrointestinal disorder with significant impact on quality of life."
+  },
+  {
+    "question": "Symptômes du Gastroesophageal Reflux Disease",
+    "answer": "En médecine, Gastroesophageal Reflux Disease se réfère à: Common gastrointestinal disorder with significant impact on quality of life."
+  },
+  {
+    "question": "Traitement de Gastroesophageal Reflux Disease",
+    "answer": "Gastroesophageal Reflux Disease: Common gastrointestinal disorder with significant impact on quality of life."
+  },
+  {
+    "question": "Traitement de Gastroesophageal Reflux Disease",
+    "answer": "En médecine, Gastroesophageal Reflux Disease se réfère à: Common gastrointestinal disorder with significant impact on quality of life."
+  },
+  {
+    "question": "Causes de Gastroesophageal Reflux Disease",
+    "answer": "Gastroesophageal Reflux Disease: Common gastrointestinal disorder with significant impact on quality of life."
+  },
+  {
+    "question": "Causes de Gastroesophageal Reflux Disease",
+    "answer": "En médecine, Gastroesophageal Reflux Disease se réfère à: Common gastrointestinal disorder with significant impact on quality of life."
+  },
+  {
+    "question": "Symptômes du Chronic Kidney Disease",
+    "answer": "Chronic Kidney Disease: Pathological condition requiring ongoing monitoring and treatment."
+  },
+  {
+    "question": "Symptômes du Chronic Kidney Disease",
+    "answer": "En médecine, Chronic Kidney Disease se réfère à: Pathological condition requiring ongoing monitoring and treatment."
+  },
+  {
+    "question": "Traitement de Chronic Kidney Disease",
+    "answer": "Chronic Kidney Disease: Pathological condition requiring ongoing monitoring and treatment."
+  },
+  {
+    "question": "Traitement de Chronic Kidney Disease",
+    "answer": "En médecine, Chronic Kidney Disease se réfère à: Pathological condition requiring ongoing monitoring and treatment."
+  },
+  {
+    "question": "Causes de Chronic Kidney Disease",
+    "answer": "Chronic Kidney Disease: Pathological condition requiring ongoing monitoring and treatment."
+  },
+  {
+    "question": "Causes de Chronic Kidney Disease",
+    "answer": "En médecine, Chronic Kidney Disease se réfère à: Pathological condition requiring ongoing monitoring and treatment."
+  },
+  {
+    "question": "Symptômes du Urinary Tract Infection",
+    "answer": "Urinary Tract Infection: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Symptômes du Urinary Tract Infection",
+    "answer": "En médecine, Urinary Tract Infection se réfère à: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Traitement de Urinary Tract Infection",
+    "answer": "Urinary Tract Infection: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Traitement de Urinary Tract Infection",
+    "answer": "En médecine, Urinary Tract Infection se réfère à: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Causes de Urinary Tract Infection",
+    "answer": "Urinary Tract Infection: Health condition with specific diagnostic criteria and treatment protocols."
+  },
+  {
+    "question": "Causes de Urinary Tract Infection",
+    "answer": "En médecine, Urinary Tract Infection se réfère à: Health condition with specific diagnostic criteria and treatment protocols."
+  }
+]
