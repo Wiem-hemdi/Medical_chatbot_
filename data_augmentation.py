@@ -1,473 +1,732 @@
-# data_augmentation.py
+"""
+Script de Data Augmentation Q&A pour Chatbot Médical - Version Complète
+Génère des paires Question-Réponse diversifiées avec validation médicale
+Version 3.0 - Janvier 2026
+
+AVERTISSEMENT: Validation médicale professionnelle requise avant usage clinique
+"""
+
 import pandas as pd
 import numpy as np
-import re
 import random
-from datetime import datetime
+import os
 import json
+from typing import List, Dict, Tuple
+from datetime import datetime
+from pathlib import Path
 
-print("=" * 60)
-print("🔬 AUGMENTATION DE DONNÉES MÉDICALES")
-print("=" * 60)
+# ============================================================================
+# CONFIGURATION
+# ============================================================================
 
-# -----------------------------
-# 1. Charger votre dataset
-# -----------------------------
-df = pd.read_csv("datasets/comprehensive_medical_dataset.csv")
-print(f"📊 Dataset original: {len(df)} entrées")
+# Configuration des chemins
+CHEMIN_ENTREE = r"C:\Users\Admin\Desktop\medical_chatbot1\datasets\dataset_medical_fr.csv"
+DOSSIER_SORTIE = r"C:\Users\Admin\Desktop\medical_chatbot1\datasets\augmented"
 
-# -----------------------------
-# 2. Fonctions d'augmentation
-# -----------------------------
-def augment_explanations(text, term_type, category):
-    """Augmente les explications avec des variantes"""
-    augmentations = []
-    
-    if term_type == "lab test":
-        patterns = [
-            f"Le test {text} mesure",
-            f"Résultat de {text} indique",
-            f"Valeur de référence pour {text}",
-            f"Interprétation clinique du {text}",
-            f"{text} - examen de laboratoire",
-            f"Analyse sanguine: {text}"
-        ]
-    elif term_type == "disease":
-        patterns = [
-            f"La maladie {text} est",
-            f"Pathologie: {text}",
-            f"Trouble médical: {text}",
-            f"Condition de santé: {text}",
-            f"Diagnostic de {text}",
-            f"Symptômes du {text}"
-        ]
-    elif term_type == "medication":
-        patterns = [
-            f"Médicament {text} prescrit pour",
-            f"Traitement par {text}",
-            f"Thérapie médicamenteuse: {text}",
-            f"Posologie du {text}",
-            f"Effets du {text}",
-            f"Prescription de {text}"
-        ]
-    else:
-        patterns = [f"{text} - "]
-    
-    return [random.choice(patterns) + " " + text for _ in range(3)]
+# Paramètres
+VARIATIONS_PAR_TERME = 10
+SEED = 42
 
-def generate_synonyms(term):
-    """Génère des synonymes et variantes"""
-    synonyms_dict = {
-        # Tests labo
-        "Hemoglobin": ["Hémoglobine", "Taux d'Hb", "Hb sanguine", "Hémoglobine totale"],
-        "White Blood Cell Count": ["Leucocytes", "Numération globulaire blanche", "GB", "WBC"],
-        "Platelet Count": ["Plaquettes", "Thrombocytes", "Numération plaquettaire"],
-        "Cholesterol Total": ["Cholestérol total", "CT", "Cholestérol sanguin"],
-        "Glucose": ["Glycémie", "Sucre sanguin", "Glucose sanguin"],
-        
-        # Maladies
-        "Hypertension": ["HTA", "Pression artérielle élevée", "Hypertension artérielle"],
-        "Diabetes": ["Diabète sucré", "Maladie diabétique", "Hyperglycémie chronique"],
-        "Asthma": ["Asthme bronchique", "Crise d'asthme", "Affection respiratoire"],
-        
-        # Symptômes
-        "Headache": ["Céphalée", "Mal de tête", "Migraine", "Douleur crânienne"],
-        "Fever": ["Fièvre", "Pyrexie", "Hyperthermie", "Température élevée"],
-        "Fatigue": ["Fatigue", "Asthénie", "Épuisement", "Lassitude"],
-    }
-    
-    return synonyms_dict.get(term, [term + " (variante)"])
+# Seeds pour reproductibilité
+np.random.seed(SEED)
+random.seed(SEED)
 
-def create_question_variants(term, explanation, term_type):
-    """Crée des questions variées pour le terme"""
-    questions = []
-    
-    base_questions = [
-        f"Qu'est-ce que {term}?",
-        f"Quelle est la signification de {term}?",
-        f"Définition de {term}",
-        f"Expliquez {term}",
-        f"Que signifie {term} en médecine?",
-        f"Rôle de {term}",
-        f"Importance de {term}",
-    ]
-    
-    if term_type == "lab test":
-        questions.extend([
-            f"Valeurs normales pour {term}",
-            f"Interprétation du test {term}",
-            f"{term} trop élevé, que faire?",
-            f"{term} trop bas, causes?",
-            f"Quand prescrire {term}?",
-        ])
-    elif term_type == "disease":
-        questions.extend([
-            f"Symptômes du {term}",
-            f"Traitement de {term}",
-            f"Causes de {term}",
-            f"Diagnostic du {term}",
-            f"Prévention du {term}",
-        ])
-    
-    return questions
+# ============================================================================
+# TEMPLATES DE QUESTIONS - VERSION COMPLÈTE
+# ============================================================================
 
-def augment_with_contextual_info(row):
-    """Ajoute des informations contextuelles"""
-    augmented = []
+TEMPLATES_QUESTIONS = {
+    'definition': [
+        "Qu'est-ce que {terme} ?",
+        "Peux-tu m'expliquer ce qu'est {terme} ?",
+        "Définis {terme}",
+        "C'est quoi {terme} ?",
+        "Explique-moi {terme}",
+        "Je voudrais comprendre ce qu'est {terme}",
+        "Donne-moi la définition de {terme}",
+        "Que signifie {terme} ?",
+        "Peux-tu me dire ce qu'est {terme} ?",
+        "J'aimerais savoir ce qu'est {terme}",
+        "Aide-moi à comprendre {terme}",
+        "Qu'entend-on par {terme} ?",
+        "Pourrais-tu expliquer {terme} ?",
+        "{terme}, qu'est-ce que c'est exactement ?",
+        "Je ne connais pas {terme}, peux-tu m'aider ?",
+        "En médecine, qu'est-ce que {terme} ?",
+        "Dans le contexte médical, que signifie {terme} ?",
+    ],
     
-    if row['type'] == 'lab test' and pd.notna(row['normal_min']) and pd.notna(row['normal_max']):
-        # Variantes de plages normales
-        contexts = [
-            f"Plage de référence: {row['normal_min']}-{row['normal_max']} {row['unit']}",
-            f"Valeurs normales: entre {row['normal_min']} et {row['normal_max']} {row['unit']}",
-            f"Intervalle physiologique: {row['normal_min']} à {row['normal_max']} {row['unit']}",
-            f"Seuils: normal = {row['normal_min']}-{row['normal_max']}, critique bas = {row.get('critical_low', 'N/A')}, critique haut = {row.get('critical_high', 'N/A')}",
-        ]
-        augmented.extend(contexts)
+    'abbreviation': [
+        "Que signifie l'abréviation {abrev} ?",
+        "C'est quoi {abrev} ?",
+        "{abrev} signifie quoi ?",
+        "Quelle est la signification de {abrev} ?",
+        "Explique {abrev}",
+        "{abrev} veut dire quoi ?",
+        "Que veut dire {abrev} en médecine ?",
+        "Peux-tu m'expliquer {abrev} ?",
+        "Qu'est-ce que {abrev} signifie ?",
+        "J'ai vu {abrev} sur mes analyses, c'est quoi ?",
+        "Mon médecin a parlé de {abrev}, qu'est-ce que c'est ?",
+    ],
     
-    if row['category']:
-        # Contexte par catégorie
-        category_context = {
-            'Hematology': ["Hématologie - étude du sang", "Système sanguin"],
-            'Biochemistry': ["Biochimie sanguine", "Métabolisme"],
-            'Endocrinology': ["Système endocrinien", "Hormones"],
-            'Cardiovascular': ["Système cardiovasculaire", "Cœur et vaisseaux"],
-            'Respiratory': ["Appareil respiratoire", "Poumons"],
+    'valeurs_normales': [
+        "Quelles sont les valeurs normales de {terme} ?",
+        "Quelle est la plage normale pour {terme} ?",
+        "Valeurs de référence de {terme} ?",
+        "Quels sont les taux normaux de {terme} ?",
+        "C'est quoi les normes pour {terme} ?",
+        "Quelle est la norme de {terme} ?",
+        "Donne-moi les valeurs normales de {terme}",
+        "Plage de référence pour {terme} ?",
+        "Valeurs standards de {terme} ?",
+        "Quel est le taux normal de {terme} ?",
+        "Entre quelles valeurs {terme} doit se situer ?",
+        "Mon {terme} est à combien normalement ?",
+    ],
+    
+    'valeurs_critiques': [
+        "Quelles sont les valeurs critiques de {terme} ?",
+        "À partir de quand {terme} devient dangereux ?",
+        "Valeurs alarmantes de {terme} ?",
+        "Seuils critiques pour {terme} ?",
+        "Quand s'inquiéter pour {terme} ?",
+        "À quel niveau {terme} devient préoccupant ?",
+        "Limites dangereuses de {terme} ?",
+    ],
+    
+    'interpretation': [
+        "J'ai {terme} à {valeur} {unite}, c'est normal ?",
+        "Mon analyse montre {terme} = {valeur} {unite}, qu'en penses-tu ?",
+        "Est-ce que {valeur} {unite} pour {terme} est bon ?",
+        "{terme} à {valeur} {unite}, est-ce inquiétant ?",
+    ],
+    
+    'symptomes': [
+        "Quels sont les symptômes de {terme} ?",
+        "Comment se manifeste {terme} ?",
+        "Signes de {terme} ?",
+        "Comment reconnaître {terme} ?",
+        "Quels sont les signes de {terme} ?",
+        "Comment savoir si j'ai {terme} ?",
+        "Manifestations de {terme} ?",
+        "Symptômes typiques de {terme} ?",
+    ],
+    
+    'traitement': [
+        "Comment traiter {terme} ?",
+        "Quel est le traitement pour {terme} ?",
+        "Comment soigner {terme} ?",
+        "Thérapie pour {terme} ?",
+        "Quel traitement pour {terme} ?",
+        "Prise en charge de {terme} ?",
+        "Options thérapeutiques pour {terme} ?",
+    ],
+    
+    'causes': [
+        "Quelles sont les causes de {terme} ?",
+        "Pourquoi a-t-on {terme} ?",
+        "Qu'est-ce qui provoque {terme} ?",
+        "Origines de {terme} ?",
+        "Facteurs de risque de {terme} ?",
+    ],
+    
+    'prevention': [
+        "Comment prévenir {terme} ?",
+        "Peut-on éviter {terme} ?",
+        "Prévention de {terme} ?",
+    ],
+    
+    'medicament_usage': [
+        "À quoi sert {terme} ?",
+        "Pourquoi prendre {terme} ?",
+        "Indications de {terme} ?",
+        "Dans quels cas utilise-t-on {terme} ?",
+    ],
+    
+    'procedure_deroulement': [
+        "Comment se déroule {terme} ?",
+        "En quoi consiste {terme} ?",
+        "Déroulement de {terme} ?",
+    ],
+}
+
+# ============================================================================
+# AVERTISSEMENTS MÉDICAUX
+# ============================================================================
+
+AVERTISSEMENTS = {
+    'interpretation': "⚠️ Important : L'interprétation de résultats d'analyses doit être faite par votre médecin en tenant compte de votre contexte médical complet.",
+    'diagnostic': "⚠️ Important : Seul un professionnel de santé qualifié peut établir un diagnostic. Cette information est fournie à titre éducatif uniquement.",
+    'traitement': "⚠️ Important : Ne modifiez jamais votre traitement sans l'avis de votre médecin. Cette information est fournie à titre éducatif uniquement.",
+    'urgence': "🚨 En cas de symptômes graves, contactez immédiatement les services d'urgence (15, 112) ou rendez-vous aux urgences.",
+}
+
+# ============================================================================
+# CLASSE PRINCIPALE
+# ============================================================================
+
+class AugmentateurMedical:
+    """Augmentation complète de données médicales Q&A"""
+    
+    def __init__(self, variations_par_terme: int = 10):
+        self.variations_par_terme = variations_par_terme
+        self.stats = {
+            'total_paires': 0,
+            'par_type': {},
+            'par_type_question': {},
+            'avertissements': 0,
         }
-        if row['category'] in category_context:
-            augmented.extend(category_context[row['category']])
     
-    return augmented
+    def choisir_templates(self, templates: List[str], n: int) -> List[str]:
+        """Choisit n templates aléatoirement"""
+        return random.sample(templates, min(n, len(templates)))
+    
+    def generer_valeur_exemple(self, row: pd.Series) -> float:
+        """Génère une valeur d'exemple dans la plage normale"""
+        try:
+            min_val = float(row['normal_min'])
+            max_val = float(row['normal_max'])
+            return round(random.uniform(min_val, max_val), 2)
+        except:
+            return None
+    
+    def formater_texte(self, texte: str, data: Dict) -> str:
+        """Formate un texte avec gestion des valeurs manquantes"""
+        data_clean = {}
+        for k, v in data.items():
+            if pd.isna(v) or v == '':
+                data_clean[k] = ''
+            else:
+                data_clean[k] = str(v)
+        
+        try:
+            result = texte.format(**data_clean)
+            # Nettoyer les espaces doubles
+            result = ' '.join(result.split())
+            return result
+        except:
+            return texte
+    
+    def generer_reponse_definition(self, row: pd.Series) -> str:
+        """Génère une réponse de définition complète"""
+        reponse = ""
+        
+        # Terme et abréviation
+        terme = row['terme']
+        abrev = f" ({row['abreviation']})" if pd.notna(row['abreviation']) and row['abreviation'] else ""
+        
+        # Type et catégorie
+        type_dict = {
+            'analyse_labo': 'une analyse de laboratoire',
+            'maladie': 'une pathologie',
+            'procedure': 'une procédure médicale',
+            'medicament': 'un médicament',
+            'symptome': 'un symptôme'
+        }
+        
+        type_desc = type_dict.get(row['type'], 'un terme médical')
+        categorie = f" en {row['categorie']}" if pd.notna(row['categorie']) else ""
+        
+        reponse = f"{terme}{abrev} est {type_desc}{categorie}. "
+        
+        # Explication
+        if pd.notna(row['explication']):
+            reponse += str(row['explication'])
+        
+        # Valeurs normales pour analyses
+        if row['type'] == 'analyse_labo' and pd.notna(row['normal_min']):
+            unite = row['unite'] if pd.notna(row['unite']) else ''
+            reponse += f" Les valeurs normales se situent entre {row['normal_min']} et {row['normal_max']} {unite}."
+        
+        return reponse
+    
+    def generer_paires_definition(self, row: pd.Series) -> List[Dict]:
+        """Génère des paires Q&A de définition"""
+        paires = []
+        questions = self.choisir_templates(TEMPLATES_QUESTIONS['definition'], 3)
+        reponse = self.generer_reponse_definition(row)
+        
+        for question in questions:
+            paires.append({
+                'question': question.format(terme=row['terme']),
+                'reponse': reponse,
+                'terme_original': row['terme'],
+                'type': row['type'],
+                'categorie': row['categorie'],
+                'type_question': 'definition',
+                'necessite_avertissement': False,
+            })
+        
+        return paires
+    
+    def generer_paires_abbreviation(self, row: pd.Series) -> List[Dict]:
+        """Génère des paires Q&A sur les abréviations"""
+        paires = []
+        
+        if not pd.notna(row['abreviation']) or row['abreviation'] == '':
+            return paires
+        
+        questions = self.choisir_templates(TEMPLATES_QUESTIONS['abbreviation'], 2)
+        reponse = f"{row['abreviation']} signifie {row['terme']}."
+        
+        if pd.notna(row['categorie']):
+            reponse += f" C'est un terme utilisé en {row['categorie']}."
+        
+        for question in questions:
+            paires.append({
+                'question': question.format(abrev=row['abreviation']),
+                'reponse': reponse,
+                'terme_original': row['terme'],
+                'type': row['type'],
+                'categorie': row['categorie'],
+                'type_question': 'abbreviation',
+                'necessite_avertissement': False,
+            })
+        
+        return paires
+    
+    def generer_paires_valeurs_normales(self, row: pd.Series) -> List[Dict]:
+        """Génère des paires Q&A sur les valeurs normales"""
+        paires = []
+        
+        if row['type'] != 'analyse_labo' or not pd.notna(row['normal_min']):
+            return paires
+        
+        questions = self.choisir_templates(TEMPLATES_QUESTIONS['valeurs_normales'], 2)
+        unite = row['unite'] if pd.notna(row['unite']) else ''
+        reponse = f"Les valeurs normales de {row['terme']} se situent entre {row['normal_min']} et {row['normal_max']} {unite}."
+        
+        for question in questions:
+            paires.append({
+                'question': question.format(terme=row['terme']),
+                'reponse': reponse,
+                'terme_original': row['terme'],
+                'type': row['type'],
+                'categorie': row['categorie'],
+                'type_question': 'valeurs_normales',
+                'necessite_avertissement': True,
+            })
+        
+        return paires
+    
+    def generer_paires_valeurs_critiques(self, row: pd.Series) -> List[Dict]:
+        """Génère des paires Q&A sur les valeurs critiques"""
+        paires = []
+        
+        if row['type'] != 'analyse_labo':
+            return paires
+        
+        if not (pd.notna(row.get('critique_bas')) or pd.notna(row.get('critique_haut'))):
+            return paires
+        
+        questions = self.choisir_templates(TEMPLATES_QUESTIONS['valeurs_critiques'], 1)
+        unite = row['unite'] if pd.notna(row['unite']) else ''
+        
+        reponse = f"Pour {row['terme']}, les valeurs critiques sont : "
+        
+        parties = []
+        if pd.notna(row.get('critique_bas')):
+            parties.append(f"en dessous de {row['critique_bas']} {unite} (seuil bas critique)")
+        if pd.notna(row.get('critique_haut')):
+            parties.append(f"au-dessus de {row['critique_haut']} {unite} (seuil haut critique)")
+        
+        reponse += " et ".join(parties) + ". "
+        reponse += "Ces valeurs nécessitent une attention médicale urgente."
+        
+        for question in questions:
+            paires.append({
+                'question': question.format(terme=row['terme']),
+                'reponse': reponse,
+                'terme_original': row['terme'],
+                'type': row['type'],
+                'categorie': row['categorie'],
+                'type_question': 'valeurs_critiques',
+                'necessite_avertissement': True,
+            })
+        
+        return paires
+    
+    def generer_paires_interpretation(self, row: pd.Series) -> List[Dict]:
+        """Génère des paires Q&A d'interprétation avec valeurs"""
+        paires = []
+        
+        if row['type'] != 'analyse_labo' or not pd.notna(row['normal_min']):
+            return paires
+        
+        # Générer 1-2 exemples
+        for _ in range(random.randint(1, 2)):
+            valeur = self.generer_valeur_exemple(row)
+            if not valeur:
+                continue
+            
+            question_template = random.choice(TEMPLATES_QUESTIONS['interpretation'])
+            unite = row['unite'] if pd.notna(row['unite']) else ''
+            
+            question = question_template.format(
+                terme=row['terme'],
+                valeur=valeur,
+                unite=unite
+            )
+            
+            reponse = f"Une valeur de {valeur} {unite} pour {row['terme']} se situe dans la plage normale "
+            reponse += f"({row['normal_min']}-{row['normal_max']} {unite}). "
+            reponse += "Cependant, seul votre médecin peut interpréter ce résultat dans votre contexte clinique complet."
+            
+            paires.append({
+                'question': question,
+                'reponse': reponse,
+                'terme_original': row['terme'],
+                'type': row['type'],
+                'categorie': row['categorie'],
+                'type_question': 'interpretation',
+                'necessite_avertissement': True,
+            })
+        
+        return paires
+    
+    def generer_paires_symptomes(self, row: pd.Series) -> List[Dict]:
+        """Génère des paires Q&A sur les symptômes"""
+        paires = []
+        
+        if row['type'] != 'maladie':
+            return paires
+        
+        questions = self.choisir_templates(TEMPLATES_QUESTIONS['symptomes'], 2)
+        reponse = f"Les symptômes de {row['terme']} peuvent varier selon les individus. "
+        reponse += "Il est essentiel de consulter un professionnel de santé pour un diagnostic précis basé sur votre situation personnelle."
+        
+        for question in questions:
+            paires.append({
+                'question': question.format(terme=row['terme']),
+                'reponse': reponse,
+                'terme_original': row['terme'],
+                'type': row['type'],
+                'categorie': row['categorie'],
+                'type_question': 'symptomes',
+                'necessite_avertissement': True,
+            })
+        
+        return paires
+    
+    def generer_paires_traitement(self, row: pd.Series) -> List[Dict]:
+        """Génère des paires Q&A sur le traitement"""
+        paires = []
+        
+        if row['type'] not in ['maladie', 'symptome']:
+            return paires
+        
+        questions = self.choisir_templates(TEMPLATES_QUESTIONS['traitement'], 1)
+        reponse = f"Le traitement de {row['terme']} doit être personnalisé selon chaque patient. "
+        reponse += "Votre médecin déterminera la meilleure approche thérapeutique adaptée à votre situation."
+        
+        for question in questions:
+            paires.append({
+                'question': question.format(terme=row['terme']),
+                'reponse': reponse,
+                'terme_original': row['terme'],
+                'type': row['type'],
+                'categorie': row['categorie'],
+                'type_question': 'traitement',
+                'necessite_avertissement': True,
+            })
+        
+        return paires
+    
+    def generer_paires_causes(self, row: pd.Series) -> List[Dict]:
+        """Génère des paires Q&A sur les causes"""
+        paires = []
+        
+        if row['type'] != 'maladie':
+            return paires
+        
+        questions = self.choisir_templates(TEMPLATES_QUESTIONS['causes'], 1)
+        reponse = f"Les causes de {row['terme']} peuvent être multiples et varient d'une personne à l'autre. "
+        reponse += "Une évaluation médicale permet d'identifier les facteurs spécifiques dans votre cas."
+        
+        for question in questions:
+            paires.append({
+                'question': question.format(terme=row['terme']),
+                'reponse': reponse,
+                'terme_original': row['terme'],
+                'type': row['type'],
+                'categorie': row['categorie'],
+                'type_question': 'causes',
+                'necessite_avertissement': False,
+            })
+        
+        return paires
+    
+    def generer_paires_medicament(self, row: pd.Series) -> List[Dict]:
+        """Génère des paires Q&A pour les médicaments"""
+        paires = []
+        
+        if row['type'] != 'medicament':
+            return paires
+        
+        questions = self.choisir_templates(TEMPLATES_QUESTIONS['medicament_usage'], 1)
+        reponse = f"{row['terme']} est un médicament"
+        
+        if pd.notna(row['categorie']):
+            reponse += f" de la classe {row['categorie']}"
+        
+        reponse += ". Votre médecin déterminera si ce médicament est approprié pour votre situation."
+        
+        for question in questions:
+            paires.append({
+                'question': question.format(terme=row['terme']),
+                'reponse': reponse,
+                'terme_original': row['terme'],
+                'type': row['type'],
+                'categorie': row['categorie'],
+                'type_question': 'usage_medicament',
+                'necessite_avertissement': True,
+            })
+        
+        return paires
+    
+    def generer_paires_procedure(self, row: pd.Series) -> List[Dict]:
+        """Génère des paires Q&A pour les procédures"""
+        paires = []
+        
+        if row['type'] != 'procedure':
+            return paires
+        
+        questions = self.choisir_templates(TEMPLATES_QUESTIONS['procedure_deroulement'], 1)
+        reponse = f"{row['terme']} est une procédure médicale"
+        
+        if pd.notna(row['categorie']):
+            reponse += f" {row['categorie']}"
+        
+        reponse += ". L'équipe médicale vous expliquera le déroulement détaillé avant l'intervention."
+        
+        for question in questions:
+            paires.append({
+                'question': question.format(terme=row['terme']),
+                'reponse': reponse,
+                'terme_original': row['terme'],
+                'type': row['type'],
+                'categorie': row['categorie'],
+                'type_question': 'procedure',
+                'necessite_avertissement': False,
+            })
+        
+        return paires
+    
+    def ajouter_avertissement(self, paire: Dict) -> Dict:
+        """Ajoute un avertissement si nécessaire"""
+        if not paire['necessite_avertissement']:
+            return paire
+        
+        type_q = paire['type_question']
+        
+        if type_q in ['interpretation', 'valeurs_normales', 'valeurs_critiques']:
+            paire['reponse'] += f"\n\n{AVERTISSEMENTS['interpretation']}"
+        elif type_q in ['symptomes']:
+            paire['reponse'] += f"\n\n{AVERTISSEMENTS['diagnostic']}"
+        elif type_q in ['traitement', 'usage_medicament']:
+            paire['reponse'] += f"\n\n{AVERTISSEMENTS['traitement']}"
+        
+        self.stats['avertissements'] += 1
+        return paire
+    
+    def augmenter_ligne(self, row: pd.Series) -> List[Dict]:
+        """Augmente une ligne du dataset"""
+        paires = []
+        
+        # Générer toutes les paires possibles
+        paires.extend(self.generer_paires_definition(row))
+        paires.extend(self.generer_paires_abbreviation(row))
+        paires.extend(self.generer_paires_valeurs_normales(row))
+        paires.extend(self.generer_paires_valeurs_critiques(row))
+        paires.extend(self.generer_paires_interpretation(row))
+        paires.extend(self.generer_paires_symptomes(row))
+        paires.extend(self.generer_paires_traitement(row))
+        paires.extend(self.generer_paires_causes(row))
+        paires.extend(self.generer_paires_medicament(row))
+        paires.extend(self.generer_paires_procedure(row))
+        
+        # Ajouter les avertissements
+        paires = [self.ajouter_avertissement(p) for p in paires]
+        
+        # Limiter au nombre souhaité
+        if len(paires) > self.variations_par_terme:
+            paires = random.sample(paires, self.variations_par_terme)
+        
+        return paires
+    
+    def augmenter_dataset(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Augmente tout le dataset"""
+        print("\n" + "=" * 80)
+        print("AUGMENTATION DES DONNÉES")
+        print("=" * 80)
+        
+        donnees = []
+        
+        for idx, row in df.iterrows():
+            paires = self.augmenter_ligne(row)
+            donnees.extend(paires)
+            
+            # Stats
+            self.stats['total_paires'] += len(paires)
+            self.stats['par_type'][row['type']] = self.stats['par_type'].get(row['type'], 0) + len(paires)
+            
+            for paire in paires:
+                type_q = paire['type_question']
+                self.stats['par_type_question'][type_q] = self.stats['par_type_question'].get(type_q, 0) + 1
+            
+            if (idx + 1) % 25 == 0:
+                print(f"   Traité: {idx + 1}/{len(df)} termes ({len(donnees)} paires générées)")
+        
+        print(f"\n✅ Augmentation terminée: {len(donnees)} paires Q&A")
+        print(f"   Avertissements ajoutés: {self.stats['avertissements']}")
+        
+        return pd.DataFrame(donnees)
 
-# -----------------------------
-# 3. Application de l'augmentation
-# -----------------------------
-def augment_dataset(df):
-    """Applique toutes les techniques d'augmentation"""
-    augmented_rows = []
-    
-    for idx, row in df.iterrows():
-        # Version originale
-        augmented_rows.append(row.to_dict())
-        
-        # 1. Synonymes et variantes terminologiques
-        synonyms = generate_synonyms(row['term'])
-        for syn in synonyms[:2]:  # Prend 2 synonymes max
-            if syn != row['term']:
-                new_row = row.copy()
-                new_row['term'] = syn
-                new_row['abbreviation'] = f"{row['abbreviation']}_syn" if pd.notna(row['abbreviation']) else ""
-                augmented_rows.append(new_row.to_dict())
-        
-        # 2. Explications augmentées
-        explanations = augment_explanations(row['explanation'], row['type'], row['category'])
-        for exp in explanations[:2]:  # 2 variantes d'explication
-            new_row = row.copy()
-            new_row['explanation'] = exp
-            new_row['frequency_score'] = row['frequency_score'] * 0.8  # Légère réduction du score
-            augmented_rows.append(new_row.to_dict())
-        
-        # 3. Contextes cliniques
-        contexts = augment_with_contextual_info(row)
-        for ctx in contexts[:2]:  # 2 contextes max
-            new_row = row.copy()
-            new_row['explanation'] = f"{row['explanation']} {ctx}"
-            augmented_rows.append(new_row.to_dict())
-    
-    return pd.DataFrame(augmented_rows)
+# ============================================================================
+# FONCTIONS UTILITAIRES
+# ============================================================================
 
-# -----------------------------
-# 4. Génération de données synthétiques
-# -----------------------------
-def generate_synthetic_medical_data(base_df):
-    """Génère des données médicales synthétiques basées sur les patterns"""
-    synthetic = []
+def charger_dataset(chemin: str) -> pd.DataFrame:
+    """Charge le dataset"""
+    print("=" * 80)
+    print("CHARGEMENT DU DATASET")
+    print("=" * 80)
     
-    # Patterns pour chaque type
-    lab_test_patterns = [
-        "{term} ({abbreviation}) - Test de laboratoire en {category}",
-        "Mesure du {term} - Indicateur clinique important",
-        "{term}: examen sanguin pour évaluer {category}",
-    ]
-    
-    disease_patterns = [
-        "{term} ({abbreviation}) - Maladie du système {category}",
-        "Pathologie: {term} - Affecte le système {category}",
-        "{term}: trouble médical nécessitant un suivi",
-    ]
-    
-    for _, row in base_df.iterrows():
-        if row['type'] == 'lab test' and random.random() > 0.7:
-            # Génère des variations de plages normales
-            for _ in range(2):
-                new_row = row.copy()
-                # Légère variation des valeurs normales (±10%)
-                if pd.notna(row['normal_min']) and pd.notna(row['normal_max']):
-                    variation = random.uniform(0.9, 1.1)
-                    new_row['normal_min'] = float(row['normal_min']) * variation
-                    new_row['normal_max'] = float(row['normal_max']) * variation
-                
-                # Variation d'unités équivalentes
-                unit_variants = {
-                    'g/dL': ['g/L', 'mmol/L'],
-                    'mmol/L': ['mg/dL', 'g/L'],
-                    'mg/L': ['g/L', 'μg/mL'],
-                }
-                if row['unit'] in unit_variants:
-                    new_row['unit'] = random.choice(unit_variants[row['unit']])
-                
-                synthetic.append(new_row.to_dict())
-    
-    return pd.DataFrame(synthetic)
+    try:
+        df = pd.read_csv(chemin, encoding='utf-8-sig')
+        print(f"\n✓ Dataset chargé: {len(df)} entrées")
+        print(f"\n  Distribution par type:")
+        for type_val, count in df['type'].value_counts().items():
+            print(f"    • {type_val}: {count}")
+        return df
+    except FileNotFoundError:
+        print(f"\n❌ Fichier introuvable: {chemin}")
+        return None
+    except Exception as e:
+        print(f"\n❌ Erreur: {e}")
+        import traceback
+        traceback.print_exc()
+        return None
 
-# -----------------------------
-# 5. Création de paires Question-Réponse
-# -----------------------------
-def create_qa_pairs(df):
-    """Crée des paires question-réponse pour l'entraînement"""
-    qa_data = []
+def sauvegarder_resultats(df_augmente: pd.DataFrame, augmentateur: AugmentateurMedical):
+    """Sauvegarde les résultats"""
+    print("\n" + "=" * 80)
+    print("SAUVEGARDE DES RÉSULTATS")
+    print("=" * 80)
     
-    for _, row in df.iterrows():
-        term = row['term']
-        explanation = row['explanation']
-        term_type = row['type']
-        
-        # Questions de base
-        questions = create_question_variants(term, explanation, term_type)
-        
-        # Réponses enrichies
-        base_answer = f"{term}: {explanation}"
-        
-        if row['type'] == 'lab test' and pd.notna(row['normal_min']):
-            answer_variants = [
-                f"{base_answer} Valeurs normales: {row['normal_min']}-{row['normal_max']} {row['unit']}.",
-                f"Le test {term} mesure {explanation.lower()}. La plage normale est de {row['normal_min']} à {row['normal_max']} {row['unit']}.",
-                f"{term} ({row.get('abbreviation', '')}): {explanation} Référence: {row['normal_min']}-{row['normal_max']} {row['unit']}.",
-            ]
-        else:
-            answer_variants = [
-                base_answer,
-                f"En médecine, {term} se réfère à: {explanation}",
-                f"Définition: {term} - {explanation}",
-            ]
-        
-        # Créer des paires
-        for question in questions[:3]:  # 3 questions par terme
-            for answer in answer_variants[:2]:  # 2 réponses par question
-                qa_data.append({
-                    'question': question,
-                    'answer': answer,
-                    'term': term,
-                    'type': term_type,
-                    'category': row['category'],
-                    'source': 'augmented'
-                })
+    dossier = Path(DOSSIER_SORTIE)
+    dossier.mkdir(parents=True, exist_ok=True)
     
-    return pd.DataFrame(qa_data)
-
-# -----------------------------
-# 6. Exécution principale
-# -----------------------------
-def main():
-    print("🚀 Début de l'augmentation des données...")
-    
-    # Augmentation du dataset principal
-    augmented_df = augment_dataset(df)
-    print(f"✅ Dataset augmenté: {len(augmented_df)} entrées")
-    
-    # Génération de données synthétiques
-    synthetic_df = generate_synthetic_medical_data(df)
-    print(f"✅ Données synthétiques: {len(synthetic_df)} entrées")
-    
-    # Création de paires Q-R
-    qa_df = create_qa_pairs(df)
-    print(f"✅ Paires Question-Réponse: {len(qa_df)} paires")
-    
-    # Fusion de tous les datasets
-    final_df = pd.concat([augmented_df, synthetic_df], ignore_index=True)
-    final_df = final_df.drop_duplicates(subset=['term', 'explanation'], keep='first')
-    
-    # Sauvegarde
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     
-    # 1. Dataset médical augmenté
-    final_df.to_csv(f"datasets/medical_dataset_augmented_{timestamp}.csv", index=False)
+    # CSV principal
+    chemin_csv = dossier / "medical_qa_augmented.csv"
+    df_augmente.to_csv(chemin_csv, index=False, encoding='utf-8-sig')
+    print(f"\n✓ CSV: {chemin_csv}")
     
-    # 2. Paires Q-R pour l'entraînement RAG
-    qa_df.to_csv(f"datasets/medical_qa_pairs_{timestamp}.csv", index=False)
+    # CSV avec timestamp
+    chemin_csv_ts = dossier / f"medical_qa_{timestamp}.csv"
+    df_augmente.to_csv(chemin_csv_ts, index=False, encoding='utf-8-sig')
+    print(f"✓ CSV timestampé: {chemin_csv_ts}")
     
-    # 3. Fichier JSON pour Ollama fine-tuning
-    qa_json = qa_df[['question', 'answer']].to_dict('records')
-    with open(f"datasets/medical_qa_{timestamp}.json", 'w', encoding='utf-8') as f:
-        json.dump(qa_json, f, ensure_ascii=False, indent=2)
+    # Excel avec stats
+    try:
+        chemin_excel = dossier / "medical_qa_augmented.xlsx"
+        with pd.ExcelWriter(chemin_excel, engine='openpyxl') as writer:
+            df_augmente.to_excel(writer, sheet_name='Q&A', index=False)
+            
+            # Stats
+            stats_type = df_augmente.groupby('type').size().reset_index(name='count')
+            stats_type.to_excel(writer, sheet_name='Stats Type', index=False)
+            
+            stats_question = df_augmente.groupby('type_question').size().reset_index(name='count')
+            stats_question.to_excel(writer, sheet_name='Stats Question', index=False)
+        
+        print(f"✓ Excel: {chemin_excel}")
+    except Exception as e:
+        print(f"⚠️  Excel non sauvegardé: {e}")
     
-    print("\n" + "=" * 60)
-    print("🎉 AUGMENTATION TERMINÉE !")
-    print("=" * 60)
-    print(f"📁 Fichiers créés:")
-    print(f"   1. medical_dataset_augmented_{timestamp}.csv")
-    print(f"   2. medical_qa_pairs_{timestamp}.csv")
-    print(f"   3. medical_qa_{timestamp}.json")
-    print(f"\n📈 Statistiques:")
-    print(f"   - Dataset original: {len(df)} entrées")
-    print(f"   - Dataset final: {len(final_df)} entrées")
-    print(f"   - Paires Q-R: {len(qa_df)} paires")
-    print(f"   - Augmentation: {len(final_df)/len(df):.1f}x")
+    # Rapport
+    chemin_rapport = dossier / "rapport.txt"
+    with open(chemin_rapport, 'w', encoding='utf-8') as f:
+        f.write("=" * 80 + "\n")
+        f.write("RAPPORT D'AUGMENTATION\n")
+        f.write("=" * 80 + "\n\n")
+        f.write(f"Date: {datetime.now()}\n\n")
+        f.write(f"Total paires: {len(df_augmente)}\n")
+        f.write(f"Avertissements: {augmentateur.stats['avertissements']}\n\n")
+        
+        f.write("PAR TYPE:\n")
+        for type_val, count in sorted(augmentateur.stats['par_type'].items()):
+            f.write(f"  {type_val}: {count}\n")
+        
+        f.write("\nPAR TYPE DE QUESTION:\n")
+        for type_q, count in sorted(augmentateur.stats['par_type_question'].items()):
+            f.write(f"  {type_q}: {count}\n")
     
-    # Aperçu des données générées
-    print(f"\n🔍 Aperçu des données augmentées:")
-    sample = final_df[['term', 'type', 'category', 'explanation']].head(5)
-    for _, row in sample.iterrows():
-        print(f"   • {row['term']} ({row['type']}): {row['explanation'][:80]}...")
+    print(f"✓ Rapport: {chemin_rapport}")
+    print(f"\n📁 Dossier: {dossier}")
 
-# -----------------------------
-# 7. Script d'intégration avec votre chatbot
-# -----------------------------
-def create_enhanced_rag_system():
-    """Crée un système RAG amélioré avec les données augmentées"""
+def afficher_exemples(df: pd.DataFrame):
+    """Affiche des exemples"""
+    print("\n" + "=" * 80)
+    print("EXEMPLES")
+    print("=" * 80)
     
-    code = '''
-# enhanced_rag_system.py
-import pandas as pd
-import numpy as np
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
-import re
+    for type_ex in df['type'].unique()[:3]:
+        subset = df[df['type'] == type_ex]
+        if not subset.empty:
+            ex = subset.sample(1).iloc[0]
+            print(f"\n📝 {type_ex.upper()}")
+            print(f"   Question: {ex['question']}")
+            print(f"   Réponse: {ex['reponse'][:150]}...")
 
-class EnhancedMedicalRAG:
-    def __init__(self, dataset_path):
-        # Charger les données augmentées
-        self.df = pd.read_csv(dataset_path)
-        self.df['term'] = self.df['term'].str.lower()
-        self.df['abbreviation'] = self.df['abbreviation'].fillna("").str.lower()
-        
-        # Préparer le texte pour la recherche
-        self.df['search_text'] = self.df.apply(
-            lambda row: f"{row['term']} {row['abbreviation']} {row['category']} {row['explanation']}",
-            axis=1
-        )
-        
-        # Initialiser TF-IDF
-        self.vectorizer = TfidfVectorizer(
-            max_features=10000,
-            stop_words=['le', 'la', 'les', 'de', 'des', 'du', 'et', 'est'],
-            ngram_range=(1, 3)  # Unigrammes, bigrammes, trigrammes
-        )
-        
-        self.X = self.vectorizer.fit_transform(self.df['search_text'])
-        
-        # Charger les paires Q-R
-        try:
-            self.qa_df = pd.read_csv(dataset_path.replace('dataset', 'qa_pairs'))
-            self.has_qa = True
-        except:
-            self.has_qa = False
-    
-    def retrieve_context(self, query, top_k=3):
-        """Recherche améliorée avec matching sémantique"""
-        query_vec = self.vectorizer.transform([query.lower()])
-        similarities = cosine_similarity(query_vec, self.X)[0]
-        
-        # Trouver les meilleures correspondances
-        top_indices = similarities.argsort()[-top_k:][::-1]
-        
-        results = []
-        for idx in top_indices:
-            if similarities[idx] > 0.15:  # Seuil de pertinence
-                row = self.df.iloc[idx]
-                result = {
-                    'term': row['term'],
-                    'abbreviation': row['abbreviation'],
-                    'type': row['type'],
-                    'category': row['category'],
-                    'explanation': row['explanation'],
-                    'similarity': similarities[idx]
-                }
-                
-                # Ajouter des valeurs normales si disponibles
-                if row['type'] == 'lab test' and pd.notna(row['normal_min']):
-                    result['normal_range'] = f"{row['normal_min']}-{row['normal_max']} {row['unit']}"
-                
-                results.append(result)
-        
-        return results
-    
-    def find_qa_match(self, query):
-        """Cherche une correspondance dans les paires Q-R"""
-        if not self.has_qa:
-            return None
-        
-        # Recherche par similarité de texte
-        for _, qa_row in self.qa_df.iterrows():
-            if qa_row['question'].lower() in query.lower() or query.lower() in qa_row['question'].lower():
-                return qa_row['answer']
-        
-        return None
-    
-    def generate_context_prompt(self, query):
-        """Génère un prompt enrichi pour Ollama"""
-        # 1. Chercher dans Q-R d'abord
-        qa_answer = self.find_qa_match(query)
-        if qa_answer:
-            return f"""QUESTION: {query}
+# ============================================================================
+# FONCTION PRINCIPALE
+# ============================================================================
 
-RÉPONSE PRÉ-ENTRAÎNÉE: {qa_answer}
-
-(Pourriez-vous reformuler cette réponse de manière plus naturelle pour un patient?)"""
-        
-        # 2. Recherche RAG standard
-        contexts = self.retrieve_context(query)
-        
-        if not contexts:
-            return f"QUESTION: {query}\\n\\n(Je n'ai pas d'information spécifique sur ce sujet)"
-        
-        # Construire le contexte
-        context_text = "\\n".join([
-            f"- {ctx['term'].title()} ({ctx.get('abbreviation', '')}): {ctx['explanation']} "
-            f"{f'Plage normale: {ctx.get(\"normal_range\", \"\")}' if 'normal_range' in ctx else ''}"
-            for ctx in contexts
-        ])
-        
-        return f"""CONTEXTE MÉDICAL:
-{context_text}
-
-QUESTION DU PATIENT: {query}
-
-INSTRUCTIONS:
-1. Utilisez le contexte médical ci-dessus
-2. Répondez en français simple
-3. Soyez précis mais accessible
-4. Mentionnez les valeurs de référence si disponibles
-5. Recommandez de consulter un médecin si nécessaire
-
-RÉPONSE:"""
-
-# Utilisation dans votre chatbot
-def integrate_with_chatbot():
-    # Initialiser le RAG amélioré
-    medical_rag = EnhancedMedicalRAG("datasets/medical_dataset_augmented.csv")
+def main():
+    """Fonction principale"""
+    print("\n")
+    print("╔" + "=" * 78 + "╗")
+    print("║" + " " * 15 + "DATA AUGMENTATION Q&A MÉDICAL - VERSION COMPLÈTE" + " " * 14 + "║")
+    print("╚" + "=" * 78 + "╝")
     
-    def enhanced_ask_phi(question):
-        # Générer le prompt enrichi
-        prompt = medical_rag.generate_context_prompt(question)
-        
-        # Appeler Ollama avec le prompt
-        # ... votre code Ollama existant ...
-        
-        return response
+    # Charger
+    df = charger_dataset(CHEMIN_ENTREE)
+    if df is None:
+        return
     
-    return enhanced_ask_phi
-'''
+    # Augmenter
+    augmentateur = AugmentateurMedical(variations_par_terme=VARIATIONS_PAR_TERME)
+    df_augmente = augmentateur.augmenter_dataset(df)
     
-    # Sauvegarder le code
-    with open("enhanced_rag_system.py", "w", encoding="utf-8") as f:
-        f.write(code)
+    # Sauvegarder
+    sauvegarder_resultats(df_augmente, augmentateur)
     
-    print(f"\n💡 Système RAG amélioré créé: enhanced_rag_system.py")
+    # Exemples
+    afficher_exemples(df_augmente)
+    
+    # Final
+    print("\n" + "=" * 80)
+    print("✅ TERMINÉ AVEC SUCCÈS!")
+    print("=" * 80)
+    print(f"\n📊 Résumé:")
+    print(f"   • {len(df_augmente)} paires Q&A")
+    print(f"   • {augmentateur.stats['avertissements']} avertissements médicaux")
+    print(f"   • Ratio: ~{len(df_augmente)//len(df)} paires/terme")
+    print(f"\n💡 Fichier prêt: medical_qa_augmented.csv")
+    print(f"📁 Dossier: {DOSSIER_SORTIE}")
+    print("\n⚠️  IMPORTANT: Validation médicale requise avant usage!")
+    print("=" * 80 + "\n")
 
 if __name__ == "__main__":
-    # Exécuter l'augmentation
-    main()
-    
-    # Créer le système RAG amélioré
-    create_enhanced_rag_system()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\n\n⚠️  Arrêté par l'utilisateur.")
+    except Exception as e:
+        print(f"\n❌ ERREUR: {e}")
+        import traceback
+        traceback.print_exc()

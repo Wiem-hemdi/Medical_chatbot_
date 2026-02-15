@@ -1,0 +1,27 @@
+================================================================================
+RAPPORT D'AUGMENTATION
+================================================================================
+
+Date: 2026-01-08 21:15:23.508220
+
+Total paires: 627
+Avertissements: 195
+
+PAR TYPE:
+  analyse_labo: 195
+  maladie: 170
+  medicament: 84
+  procedure: 96
+  symptome: 82
+
+PAR TYPE DE QUESTION:
+  abbreviation: 92
+  causes: 20
+  definition: 300
+  interpretation: 35
+  procedure: 20
+  symptomes: 40
+  traitement: 40
+  usage_medicament: 20
+  valeurs_critiques: 20
+  valeurs_normales: 40

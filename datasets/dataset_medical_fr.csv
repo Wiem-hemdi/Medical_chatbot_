@@ -1,0 +1,101 @@
+﻿terme,abreviation,type,categorie,normal_min,normal_max,critique_bas,critique_haut,unite,score_frequence,code_cim10,code_ccam,id_snomed,explication
+Hémoglobine,Hb,analyse_labo,Hématologie,12.0,16.0,7.0,20.0,g/dL,0.12,,,,"Mesure du/de hémoglobine dans le sang, utilisée pour diagnostiquer et surveiller diverses affections."
+Numération des globules blancs,GB,analyse_labo,Hématologie,4.0,11.0,2.0,30.0,10^9/L,0.23,,,,Analyse de laboratoire clinique mesurant les taux de numération des globules blancs pour évaluer l'état de santé.
+Numération plaquettaire,PLT,analyse_labo,Hématologie,150.0,450.0,50.0,1000.0,10^9/L,0.18,,,1499914.0,Analyse quantitative du/de numération plaquettaire fournissant des informations sur les processus physiologiques.
+Cholestérol total,CT,analyse_labo,Biochimie,3.6,5.2,,6.2,mmol/L,0.3,,,1445199.0,"Mesure du/de cholestérol total dans le sang, utilisée pour diagnostiquer et surveiller diverses affections."
+Lipoprotéines de basse densité,LDL,analyse_labo,Biochimie,1.8,3.0,,4.9,mmol/L,0.28,,,8038374.0,Analyse quantitative du/de lipoprotéines de basse densité fournissant des informations sur les processus physiologiques.
+Lipoprotéines de haute densité,HDL,analyse_labo,Biochimie,1.0,2.0,0.4,,mmol/L,0.5,,,,Analyse de laboratoire clinique mesurant les taux de lipoprotéines de haute densité pour évaluer l'état de santé.
+Triglycérides,TG,analyse_labo,Biochimie,0.5,1.7,,5.6,mmol/L,0.78,,,,"Mesure du/de triglycérides dans le sang, utilisée pour diagnostiquer et surveiller diverses affections."
+Glycémie à jeun,GAJ,analyse_labo,Biochimie,3.9,5.6,2.8,16.7,mmol/L,0.41,,,,Test sanguin standard permettant de détecter des anomalies dans les paramètres de biochimie.
+Hémoglobine glyquée,HbA1c,analyse_labo,Endocrinologie,4.0,5.6,,9.0,%,0.19,,,7022674.0,Marqueur diagnostique important pour évaluer la fonction et les troubles de endocrinologie.
+Hormone thyréostimulante,TSH,analyse_labo,Endocrinologie,0.4,4.0,0.01,10.0,mUI/L,0.64,,,8707870.0,Marqueur diagnostique important pour évaluer la fonction et les troubles de endocrinologie.
+T4 libre,FT4,analyse_labo,Endocrinologie,10.0,20.0,5.0,30.0,pmol/L,0.21,,,2322047.0,Analyse quantitative du/de t4 libre fournissant des informations sur les processus physiologiques.
+Protéine C-réactive,CRP,analyse_labo,Immunologie,0.0,5.0,,100.0,mg/L,0.36,,,7067228.0,Analyse quantitative du/de protéine c-réactive fournissant des informations sur les processus physiologiques.
+Vitesse de sédimentation,VS,analyse_labo,Hématologie,0.0,20.0,,100.0,mm/h,0.27,,,,Analyse quantitative du/de vitesse de sédimentation fournissant des informations sur les processus physiologiques.
+Créatinine,Cr,analyse_labo,Biochimie,62.0,106.0,,530.0,μmol/L,0.8,,,4905582.0,Analyse de laboratoire clinique mesurant les taux de créatinine pour évaluer l'état de santé.
+Urée sanguine,BUN,analyse_labo,Biochimie,2.5,7.1,,35.7,mmol/L,0.44,,,7120868.0,"Mesure du/de urée sanguine dans le sang, utilisée pour diagnostiquer et surveiller diverses affections."
+Sodium,Na,analyse_labo,Biochimie,135.0,145.0,120.0,160.0,mmol/L,0.43,,,,Analyse de laboratoire clinique mesurant les taux de sodium pour évaluer l'état de santé.
+Potassium,K,analyse_labo,Biochimie,3.5,5.0,2.5,6.5,mmol/L,0.73,,,2197935.0,Marqueur diagnostique important pour évaluer la fonction et les troubles de biochimie.
+Alanine aminotransférase,ALT,analyse_labo,Biochimie,7.0,56.0,,300.0,U/L,0.67,,,5107245.0,Analyse quantitative du/de alanine aminotransférase fournissant des informations sur les processus physiologiques.
+Aspartate aminotransférase,AST,analyse_labo,Biochimie,10.0,40.0,,300.0,U/L,0.52,,,,Analyse de laboratoire clinique mesurant les taux de aspartate aminotransférase pour évaluer l'état de santé.
+Phosphatase alcaline,PAL,analyse_labo,Biochimie,44.0,147.0,,500.0,U/L,0.3,,,1938483.0,Analyse quantitative du/de phosphatase alcaline fournissant des informations sur les processus physiologiques.
+Hypertension artérielle,HTA,maladie,Cardiovasculaire,,,,,,0.84,I50.6,,,"Trouble de santé chronique affectant plusieurs systèmes, traité par changements de mode de vie et médicaments."
+Diabète de type 2,DT2,maladie,Endocrinologie,,,,,,0.92,I82.5,,,"Trouble de santé chronique affectant plusieurs systèmes, traité par changements de mode de vie et médicaments."
+Maladie coronarienne,MC,maladie,Cardiovasculaire,,,,,,0.46,I92.7,,,Condition pathologique nécessitant une surveillance et un traitement continus.
+Bronchopneumopathie chronique obstructive,BPCO,maladie,Respiratoire,,,,,,0.32,I81.8,,,"Trouble de santé chronique affectant plusieurs systèmes, traité par changements de mode de vie et médicaments."
+Asthme,,maladie,Respiratoire,,,,,,0.49,I84.6,,3320821.0,Condition de santé avec des critères diagnostiques spécifiques et des protocoles de traitement.
+Polyarthrite rhumatoïde,PR,maladie,Musculo-squelettique,,,,,,0.54,I16.1,,,Condition de santé avec des critères diagnostiques spécifiques et des protocoles de traitement.
+Arthrose,,maladie,Musculo-squelettique,,,,,,0.81,I64.9,,,"Trouble de santé chronique affectant plusieurs systèmes, traité par changements de mode de vie et médicaments."
+Trouble dépressif majeur,TDM,maladie,Psychiatrique,,,,,,0.64,I69.8,,,Condition pathologique nécessitant une surveillance et un traitement continus.
+Trouble anxieux généralisé,TAG,maladie,Psychiatrique,,,,,,0.87,I11.1,,5476583.0,Condition de santé avec des critères diagnostiques spécifiques et des protocoles de traitement.
+Hypothyroïdie,,maladie,Endocrinologie,,,,,,0.2,I65.2,,5418934.0,Trouble endocrinologie courant ayant un impact significatif sur la qualité de vie.
+Hyperthyroïdie,,maladie,Endocrinologie,,,,,,0.79,I74.1,,6007072.0,Condition de santé avec des critères diagnostiques spécifiques et des protocoles de traitement.
+Insuffisance cardiaque,IC,maladie,Cardiovasculaire,,,,,,0.65,I29.5,,9897858.0,Condition de santé avec des critères diagnostiques spécifiques et des protocoles de traitement.
+Fibrillation auriculaire,FA,maladie,Cardiovasculaire,,,,,,0.64,I72.0,,,Condition médicale caractérisée par fibrillation auriculaire nécessitant une prise en charge médicale.
+Accident vasculaire cérébral,AVC,maladie,Neurologique,,,,,,0.89,I49.3,,,Trouble neurologique courant ayant un impact significatif sur la qualité de vie.
+Migraine,,maladie,Neurologique,,,,,,0.95,I20.7,,9937326.0,Condition de santé avec des critères diagnostiques spécifiques et des protocoles de traitement.
+Syndrome de l'intestin irritable,SII,maladie,Gastro-intestinal,,,,,,0.22,I70.8,,,"Trouble de santé chronique affectant plusieurs systèmes, traité par changements de mode de vie et médicaments."
+Maladie inflammatoire de l'intestin,MII,maladie,Gastro-intestinal,,,,,,0.89,I64.3,,4374754.0,Condition de santé avec des critères diagnostiques spécifiques et des protocoles de traitement.
+Reflux gastro-œsophagien,RGO,maladie,Gastro-intestinal,,,,,,0.46,I95.5,,9683481.0,Trouble gastro-intestinal courant ayant un impact significatif sur la qualité de vie.
+Insuffisance rénale chronique,IRC,maladie,Rénal,,,,,,0.21,I38.1,,4860684.0,Condition pathologique nécessitant une surveillance et un traitement continus.
+Infection urinaire,IU,maladie,Infectieux,,,,,,0.3,I19.0,,,Condition de santé avec des critères diagnostiques spécifiques et des protocoles de traitement.
+Numération formule sanguine,NFS,procedure,Diagnostic,,,,,,0.87,,19287,5672073.0,Procédure médicale diagnostic réalisée à des fins de diagnostic ou de traitement.
+Scanner,TDM,procedure,Diagnostic,,,,,,0.29,,27342,8930103.0,Procédure de soins de santé réalisée par des professionnels médicaux qualifiés.
+Imagerie par résonance magnétique,IRM,procedure,Diagnostic,,,,,,0.81,,63354,,Intervention clinique utilisée pour évaluer ou traiter des conditions médicales.
+Électrocardiogramme,ECG,procedure,Diagnostic,,,,,,0.69,,56438,8835373.0,Procédure médicale diagnostic réalisée à des fins de diagnostic ou de traitement.
+Coloscopie,,procedure,Diagnostic,,,,,,0.71,,94696,,Procédure médicale diagnostic réalisée à des fins de diagnostic ou de traitement.
+Endoscopie,,procedure,Diagnostic,,,,,,0.76,,24322,,Procédure de soins de santé réalisée par des professionnels médicaux qualifiés.
+Coronarographie,,procedure,Diagnostic,,,,,,0.58,,28373,5673212.0,Intervention clinique utilisée pour évaluer ou traiter des conditions médicales.
+Biopsie,,procedure,Diagnostic,,,,,,0.32,,19880,2642635.0,Procédure de soins de santé réalisée par des professionnels médicaux qualifiés.
+Kinésithérapie,Kiné,procedure,Rééducatif,,,,,,0.69,,80855,2564689.0,Procédure médicale rééducatif réalisée à des fins de diagnostic ou de traitement.
+Chimiothérapie,Chimio,procedure,Thérapeutique,,,,,,0.25,,73653,7728339.0,Intervention clinique utilisée pour évaluer ou traiter des conditions médicales.
+Radiothérapie,Radio,procedure,Thérapeutique,,,,,,0.25,,10282,5449368.0,Procédure médicale thérapeutique réalisée à des fins de diagnostic ou de traitement.
+Vaccination,,procedure,Préventif,,,,,,0.36,,82845,9164991.0,Procédure de soins de santé réalisée par des professionnels médicaux qualifiés.
+Appendicectomie,,procedure,Chirurgical,,,,,,0.27,,38534,2022698.0,Intervention clinique utilisée pour évaluer ou traiter des conditions médicales.
+Cholécystectomie,,procedure,Chirurgical,,,,,,0.15,,86569,9910817.0,Technique médicale chirurgical standard avec des protocoles établis.
+Cure de hernie,,procedure,Chirurgical,,,,,,0.15,,76562,,Intervention clinique utilisée pour évaluer ou traiter des conditions médicales.
+Cathétérisme cardiaque,,procedure,Diagnostic,,,,,,0.16,,18907,4946066.0,Intervention clinique utilisée pour évaluer ou traiter des conditions médicales.
+Dialyse,,procedure,Thérapeutique,,,,,,0.21,,84668,,Procédure de soins de santé réalisée par des professionnels médicaux qualifiés.
+Transfusion sanguine,,procedure,Thérapeutique,,,,,,0.14,,20745,9770838.0,Intervention médicale diagnostique ou thérapeutique.
+Bronchoscopie,,procedure,Diagnostic,,,,,,0.94,,36772,6271130.0,Technique médicale diagnostic standard avec des protocoles établis.
+Ponction lombaire,PL,procedure,Diagnostic,,,,,,0.34,,27154,6033115.0,Intervention clinique utilisée pour évaluer ou traiter des conditions médicales.
+Metformine,,medicament,Antidiabétique,,,,,,0.38,,,2217071.0,Médicament avec un profil d'efficacité et de sécurité établi.
+Insuline,,medicament,Antidiabétique,,,,,,0.51,,,2677407.0,Médicament pharmaceutique utilisé pour traiter les conditions antidiabétique.
+Lisinopril,,medicament,Antihypertenseur,,,,,,0.58,,,3222252.0,Médicament pharmaceutique utilisé pour traiter les conditions antihypertenseur.
+Amlodipine,,medicament,Antihypertenseur,,,,,,0.89,,,7199635.0,Traitement médicamenteux pour gérer les symptômes et la progression des conditions associées.
+Atorvastatine,,medicament,Hypolipémiant,,,,,,0.24,,,6075395.0,Traitement médicamenteux pour gérer les symptômes et la progression des conditions associées.
+Aspirine,AAS,medicament,Antiplaquettaire,,,,,,0.99,,,9874152.0,Option de traitement pharmacologique dans la pratique clinique.
+Warfarine,,medicament,Anticoagulant,,,,,,0.7,,,2737893.0,Médicament pharmaceutique utilisé pour traiter les conditions anticoagulant.
+Lévothyroxine,,medicament,Endocrinien,,,,,,0.34,,,3607983.0,Médicament couramment prescrit avec des indications thérapeutiques spécifiques.
+Salbutamol,,medicament,Bronchodilatateur,,,,,,0.35,,,,Traitement médicamenteux pour gérer les symptômes et la progression des conditions associées.
+Ibuprofène,,medicament,AINS,,,,,,0.28,,,5428914.0,Traitement médicamenteux pour gérer les symptômes et la progression des conditions associées.
+Oméprazole,,medicament,IPP,,,,,,0.54,,,1852264.0,Option de traitement pharmacologique dans la pratique clinique.
+Fluoxétine,,medicament,ISRS,,,,,,0.67,,,1739653.0,Médicament pharmaceutique utilisé pour traiter les conditions isrs.
+Sertraline,,medicament,ISRS,,,,,,0.4,,,,Médicament pharmaceutique utilisé pour traiter les conditions isrs.
+Amoxicilline,,medicament,Antibiotique,,,,,,0.25,,,8175395.0,Traitement médicamenteux pour gérer les symptômes et la progression des conditions associées.
+Azithromycine,,medicament,Antibiotique,,,,,,0.11,,,,Option de traitement pharmacologique dans la pratique clinique.
+Métoprolol,,medicament,Bêta-bloquant,,,,,,0.59,,,3484601.0,Médicament couramment prescrit avec des indications thérapeutiques spécifiques.
+Furosémide,,medicament,Diurétique,,,,,,0.21,,,1669324.0,Médicament avec un profil d'efficacité et de sécurité établi.
+Hydrochlorothiazide,HCTZ,medicament,Diurétique,,,,,,0.29,,,,Traitement médicamenteux pour gérer les symptômes et la progression des conditions associées.
+Prednisone,,medicament,Corticoïde,,,,,,0.42,,,7817881.0,Médicament pharmaceutique utilisé pour traiter les conditions corticoïde.
+Clopidogrel,,medicament,Antiplaquettaire,,,,,,0.77,,,4971793.0,Option de traitement pharmacologique dans la pratique clinique.
+Céphalée,,symptome,Aigu,,,,,,0.98,I32.6,,,Symptôme pouvant indiquer des conditions médicales sous-jacentes.
+Fièvre,,symptome,Aigu,,,,,,0.8,I62.3,,,Expérience rapportée par le patient nécessitant une évaluation médicale.
+Fatigue,,symptome,Chronique,,,,,,0.44,I14.7,,,Manifestation clinique courante rapportée par les patients.
+Dyspnée,,symptome,Aigu,,,,,,0.41,I39.3,,,Signe clinique qui guide les investigations diagnostiques.
+Douleur thoracique,,symptome,Aigu,,,,,,0.46,I45.1,,5682940.0,Symptôme pouvant indiquer des conditions médicales sous-jacentes.
+Nausée,,symptome,Aigu,,,,,,0.68,I61.8,,1463060.0,Expérience rapportée par le patient nécessitant une évaluation médicale.
+Vertige,,symptome,Aigu,,,,,,0.89,I43.2,,5453786.0,Manifestation clinique courante rapportée par les patients.
+Toux,,symptome,Chronique,,,,,,0.2,I65.5,,6262632.0,Manifestation clinique courante rapportée par les patients.
+Douleur articulaire,Arthralgie,symptome,Chronique,,,,,,0.65,I75.1,,4188992.0,Signe clinique qui guide les investigations diagnostiques.
+Lombalgie,,symptome,Chronique,,,,,,0.14,I65.0,,4305700.0,Expérience rapportée par le patient nécessitant une évaluation médicale.
+Douleur abdominale,,symptome,Aigu,,,,,,0.49,I95.5,,3090865.0,Expérience rapportée par le patient nécessitant une évaluation médicale.
+Palpitations,,symptome,Aigu,,,,,,0.56,I95.6,,5960271.0,Expérience rapportée par le patient nécessitant une évaluation médicale.
+Éruption cutanée,,symptome,Localisé,,,,,,0.21,I63.6,,3919694.0,Motif courant de consultation médicale.
+Faiblesse,,symptome,Systémique,,,,,,0.61,I61.8,,6098175.0,Motif courant de consultation médicale.
+Constipation,,symptome,Chronique,,,,,,0.29,I84.9,,8801207.0,Expérience rapportée par le patient nécessitant une évaluation médicale.
+Diarrhée,,symptome,Aigu,,,,,,0.5,I37.8,,3846949.0,Signe clinique qui guide les investigations diagnostiques.
+Vision floue,,symptome,Aigu,,,,,,0.36,I94.9,,4940441.0,Manifestation clinique courante rapportée par les patients.
+Acouphène,,symptome,Chronique,,,,,,0.3,I35.2,,,Expérience rapportée par le patient nécessitant une évaluation médicale.
+Insomnie,,symptome,Chronique,,,,,,0.99,I88.1,,4262081.0,Symptôme pouvant indiquer des conditions médicales sous-jacentes.
+Perte de poids,,symptome,Systémique,,,,,,0.54,I41.2,,1093026.0,Signe clinique qui guide les investigations diagnostiques.
